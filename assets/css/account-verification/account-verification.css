@@ -1,0 +1,45 @@
+.account-verification-parent-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.account-verification-parent-container .account-verification-container {
+  width: 95%;
+  padding: 40px 20px 40px 20px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.account-verification-parent-container .account-verification-container h3 {
+  text-align: center;
+}
+
+.account-verification-parent-container .account-verification-container button {
+  background: #245CC5;
+  color: white;
+  width: 100%;
+  margin-top: 15px;
+}
+
+@media (min-width: 992px) {
+  .account-verification-container {
+    width: 50% !important;
+  }
+  .account-verification-container .buttn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .account-verification-container .buttn-container a {
+    width: 50% !important;
+  }
+}
+/*# sourceMappingURL=account-verification.css.map */

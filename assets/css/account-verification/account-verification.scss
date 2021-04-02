@@ -1,0 +1,34 @@
+@import "../../../assets/utilities/sass/variables";
+.account-verification-parent-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .account-verification-container{
+        h3{
+            text-align: center;
+        }
+        width: 95%;
+        padding: 40px 20px 40px 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        button{
+            background:$primary-color;
+             color: white;
+             width: 100%;
+             margin-top: 15px;
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .account-verification-container{
+        width: 50% !important;
+        .buttn-container{
+            display: flex;
+            justify-content: center;
+            a{
+                width: 50% !important;
+            }
+        }
+    }
+}

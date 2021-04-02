@@ -1,0 +1,38 @@
+.aupair-nanny-granny-aupair,
+.we-need-assistance-support-in,
+.applicant-would-take-care,
+.tutor-who-can-teach,
+.tutor-who-can-do-activities,
+.student-age-group-tutor-would-teach,
+.price-per-hour,
+.dynamic-label,
+.yes-take-care-special-children{
+    display: none;
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .price-label-container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        div{
+            margin-right: 9px;
+        }
+        h6{
+            text-align: right;
+        }
+        width: 50%;
+     }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { }
