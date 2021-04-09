@@ -1,10 +1,10 @@
 <?php
     function insert_into_wp_users($request){
         $user_id = wp_insert_user( array(
-            'user_email' => $request['email'],
-            'user_pass'  => $request['password'],
-            'user_login' => $request['userLogin'],
-            'role'       => 'subscriber'
+            'user_email'   => $request['email'],
+            'user_pass'    => $request['password'],
+            'user_login'   => $request['email'],
+            'role'         => 'subscriber'
           ));
           if( is_wp_error( $user_id  ) ) {
              wp_send_json_error($user_id->get_error_message());

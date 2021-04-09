@@ -103,7 +103,8 @@
                 'attend_first_aid_training'                               => $request['attendFirstAidTraining'],
                 'have_criminal_record'                                    => $request['haveCriminalRecord'],
                 'special_diet_considerations'                             => $request['specialDietConsiderations'],
-                'health_problems_allergies'                               => $request['healthProblemsAllergy'],
+                'have_health_problems_allergy'                            => $request['haveHealthProblemsAllergy'], 
+                'describe_health_problems_allergies'                      => $request['describehealthProblemsAllergy'],
                 'do_you_smoke'                                            => $request['doYouSmoke'],
                 'can_swim_well'                                           => $request['canSwimWell'],
                 'can_ride_bike'                                           => $request['canRideBike'],
@@ -120,7 +121,8 @@
                 'country'                                                 => $request['country'],
                 'mobile_phone_no'                                         => $request['mobilePhoneNo'],
                 'letter'                                                  => $request['letter'],  
-                'is_activated'                                            => 0
+                'is_activated'                                            => 0,
+                'year_created'                                            => $request['yearCreated']
             ),
             array(
                 '%d',
@@ -239,6 +241,8 @@
                 '%s',
                 '%s',
                 '%s',
+                '%s',
+                '%d',
                 '%d'
             )
         );
@@ -256,11 +260,14 @@
             array(
                 'wp_user_id'    => $request['wpUserID'],
                 'country'       => $request['country'],
-                'is_activated'  => 0
+                'is_activated'  => 0,
+                'year_created'  => $request['yearCreated'],
             ),
             array(
                 "%d",
                 "%s",
+                "%d",
+                "%d",
             )
         );
         if($result) {

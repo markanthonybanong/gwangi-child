@@ -103,6 +103,7 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
  * Text..........................Text utilities.
  */
  @import "assets/utilities/sass/variables";
+ @import "assets/utilities/sass/international-telephone-input/intlTelInput";
  /***
   *  MOBILE FIRST CSS
   **/
@@ -189,7 +190,7 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
     }
 }
 .registration-countries,
-.registraion-preferred-nationalities,
+.preferred-nationalities,
 .languages-spoken-at-home,
 .applicant-currently-living-in{
     overflow-y: auto;
@@ -653,10 +654,14 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
  */
 
 // Styles go here...
-
+ 
 /**
 *MEDIA QUERY 
 */
+.iti__flag {background-image: url("assets/utilities/css/international-telephone-input/img/flags.png");}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .iti__flag {background-image: url("assets/utilities/css/international-telephone-input/img/flags.png");}
+}
 @media (min-width: 576px) { 
 
 }

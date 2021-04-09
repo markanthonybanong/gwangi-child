@@ -10,7 +10,8 @@
 .weight-in-kg,
 .weight-in-lbs,
 .height-in-cm,
-.height-in-ft {
+.height-in-ft,
+.describe-health-problems-allergies-container {
   display: none;
 }
 

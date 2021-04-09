@@ -830,16 +830,35 @@ get_header();
             </div>
             <div class="e-r-have-health-problmes-allergies">
               <div class="center">
-                 <div class="registration-input">
-                     <div class="label-container">
-                        <h5>Do you have any health problems or allergies?<span id="required">*</span></h5>
-                     </div>
-                     <div class="field-container">
-                        <textarea id="field" name="have-health-problems-or-allergies" rows="4" cols="50" class="have-health-problems-or-allergies">
-                        </textarea>
-                     </div>
+                 <div class="registration-radio-button">
+                     <h5>Do you have any health problems or allergies?<span id="required">*</span></h5>
+                     <div class="radio-button-fields">
+                        <div id="input-1">
+                           <input type="radio" name="have-health-problems-or-allergies" id="have-health-problems-or-allergies-yes" value="Yes">
+                           <label for="have-health-problems-or-allergies-yes" class="have-health-problems-or-allergies">Yes</label><br>
+                        </div>
+                        <div id="input-2">
+                           <input type="radio" name="have-health-problems-or-allergies" id="have-health-problems-or-allergies-no" value="No">
+                           <label for="have-health-problems-or-allergies-no" class="have-health-problems-or-allergies">No</label><br>
+                        </div>
+                     </div>                    
                  </div>
               </div>
+            </div>
+            <div class="describe-health-problems-allergies-container">
+               <div class="center">
+                  <div class="registration-input">
+                     <div class="label-container">
+                        <div>
+                           <h5>Describe your health problems or allergies <span id="required">*</span></h5>
+                        </div>
+                     </div>
+                     <div class="field-container">
+                        <textarea id="field" name="describe-health-problems-or-allergies" rows="4" cols="50" class="describe-health-problems-or-allergies">
+                        </textarea>
+                     </div>
+                  </div>
+               </div>
             </div>
             <div class="r-e-do-you-smoke">
                <div class="center">
@@ -1073,7 +1092,7 @@ get_header();
                         </div>
                      </div>
                      <div class="field-container">
-                        <input id="field" type="number" name="mobile-number" placeholder="Mobile Phone No" class="mobile-number"/>
+                        <input id="field" type="tel" name="mobile-number[full]" class="mobile-number"/>
                      </div>
                   </div>
                </div>
@@ -1086,27 +1105,13 @@ get_header();
                    </textarea>
                 </div>
             </div>
-            <div class="username-container">
-               <h3 class="add-border-bottom">Account Information</h3>
-               <div class="center">
-                  <div class="registration-input">
-                     <div class="label-container">
-                        <div>
-                           <h5>Username <span id="required">*</span></h5>
-                        </div>
-                     </div>
-                     <div class="field-container">
-                        <input id="field" type="text" name="username" placeholder="Username" class="account-username"/>
-                     </div>
-                  </div>
-               </div>
-            </div>
+            <h3 class="add-border-bottom">Account Information</h3>
             <div class="r-e-email-add">
                <div class="center">
                   <div class="registration-input">
                      <div class="label-container">
                         <div>
-                           <h5>Email address <span id="required">*</span></h5>
+                           <h5>Email address(will be used as your username)<span id="required">*</span></h5>
                         </div>
                      </div>
                      <div class="field-container">
@@ -1114,6 +1119,20 @@ get_header();
                      </div>
                   </div>
                </div>
+            </div>
+            <div class="confirm-email-container">
+               <div class="center">
+                  <div class="registration-input">
+                     <div class="label-container">
+                        <div>
+                           <h5>Confirm Email address <span id="required">*</span></h5>
+                        </div>
+                     </div>
+                     <div class="field-container">
+                        <input id="field" type="text" name="confirm-email" placeholder="Confirm Email" class="confirm-email"/>
+                     </div>
+                  </div>
+               </div>    
             </div>
             <div class="r-e-password">
                   <div class="center">

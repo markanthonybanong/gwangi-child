@@ -1,9 +1,11 @@
-const path = require('path');
+const path    = require('path');
 const webpack = require("webpack");
 module.exports = {
     mode: 'production',
     devtool: 'source-map',
-    entry: './assets/js/register-employee/index.js',
+    entry: [
+            './assets/js/register-employee/registration/index.js',
+    ],
     plugins: [
         new webpack.ProvidePlugin({
             $: "jquery",
