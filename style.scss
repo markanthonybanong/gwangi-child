@@ -658,9 +658,9 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
 /**
 *MEDIA QUERY 
 */
-.iti__flag {background-image: url("assets/utilities/css/international-telephone-input/img/flags.png");}
+.iti__flag {background-image: url("assets/utilities/sass/international-telephone-input/img/flags.png");}
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .iti__flag {background-image: url("assets/utilities/css/international-telephone-input/img/flags.png");}
+    .iti__flag {background-image: url("assets/utilities/sass/international-telephone-input/img/flags@2x.png");}
 }
 @media (min-width: 576px) { 
 

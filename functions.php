@@ -18,12 +18,12 @@ add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
 function child_theme_configurator_css() {
     //for development only remove, date and random
     wp_enqueue_style( 'chld_thm_cfg_separate', trailingslashit( get_stylesheet_directory_uri() ) . '/style.css', array( 'gwangi-style','gwangi-style' ), date("h:i:s") );
-    if(is_page_template('page-templates/register-employee.php')) {
+    if(is_page_template('page-templates/employee/register-employee.php')) {
         wp_enqueue_style( 'register-employee', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/register-employee/register-employee.css', false, rand(111,9999));
        
-    } elseif(is_page_template('page-templates/register-host-family.php')) {
+    } elseif(is_page_template('page-templates/host-family/register-host-family.php')) {
         wp_enqueue_style( 'register-host-family', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/register-host-family/register-host-family.css', false, rand(111,9999));
-    }elseif(is_page_template('page-templates/account-verification.php')) {
+    }elseif(is_page_template('page-templates/account-verfication/account-verification.php')) {
         wp_enqueue_style( 'account-verification', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/account-verification/account-verification.css', false, rand(111,9999));
     }
 }
@@ -33,13 +33,13 @@ add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 999 );
  
 function child_theme_enque_scripts() {
     //for development only change date to false
-    if(is_page_template('page-templates/register-employee.php')) {
+    if(is_page_template('page-templates-employee/register-employee.php')) {
         wp_enqueue_script('register-employee', get_stylesheet_directory_uri(). '/dist/register-employee.js', array('jquery'), date("h:i:s"), true);
         wp_localize_script( 'register-employee', 'myAjax', array( 
             'restURL' => rest_url(),
             'nonce'   => wp_create_nonce('wp_rest')
         ));
-    } elseif(is_page_template('page-templates/register-host-family.php')) {
+    } elseif(is_page_template('page-templates-host-family/register-host-family.php')) {
         wp_enqueue_script('register-host-family', get_stylesheet_directory_uri(). '/dist/register-host-family.js', false, date("h:i:s"), true);
     }
 }
