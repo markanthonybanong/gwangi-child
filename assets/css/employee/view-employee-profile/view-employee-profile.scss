@@ -1,0 +1,92 @@
+@import "../../../utilities/sass/variables";
+.active-aupair-parent-container{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    .active-aupair-container{
+        margin-bottom: 15px;
+        .employee-account-container{
+            display: flex;
+            flex-direction: column;
+            .column-one{
+                img{
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    border: 10px solid $gray;
+                }
+                display: flex;
+                justify-content: center;
+            }
+            .column-two{
+                margin-top: 15px;
+                h3{
+                    text-align: center;
+                }
+                h5{
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .row{
+        width: 95%;
+        display: flex;
+        flex-flow: column;
+        .personal-information-parent-container,
+        .job-information-parent-container,
+        .letter-to-the-family-parent-container,
+        .contact-information-parent-container{
+            padding: 40px 20px 40px 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            margin-bottom: 15px;
+        }
+    }
+    .active-aupair-container,
+    .personal-information-parent-container,
+    .job-information-parent-container,
+    .letter-to-the-family-parent-container,
+    .contact-information-parent-container{
+        display: none;
+    }
+}
+
+
+@media (min-width: 576px) { 
+
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .employee-account-container{
+        // background: pink;
+        flex-direction: row !important;
+        .column-one{
+            // background: yellow;
+            width: 50%;
+        }
+        .column-two{
+            width: 50%;
+            // background: orange;
+        }
+    }
+    .row{
+        flex-flow: row !important;
+        justify-content: space-between;
+        width: 68% !important;
+    }
+    .personal-information-parent-container,
+    .job-information-parent-container,
+    .letter-to-the-family-parent-container,
+    .contact-information-parent-container{
+        width: 49%;
+    }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+
+}

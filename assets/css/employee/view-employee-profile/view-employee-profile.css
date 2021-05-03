@@ -1,0 +1,115 @@
+.active-aupair-parent-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.active-aupair-parent-container .active-aupair-container {
+  margin-bottom: 15px;
+}
+
+.active-aupair-parent-container .active-aupair-container .employee-account-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.active-aupair-parent-container .active-aupair-container .employee-account-container .column-one {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.active-aupair-parent-container .active-aupair-container .employee-account-container .column-one img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 10px solid #c9c8c7;
+}
+
+.active-aupair-parent-container .active-aupair-container .employee-account-container .column-two {
+  margin-top: 15px;
+}
+
+.active-aupair-parent-container .active-aupair-container .employee-account-container .column-two h3 {
+  text-align: center;
+}
+
+.active-aupair-parent-container .active-aupair-container .employee-account-container .column-two h5 {
+  margin-top: 10px;
+}
+
+.active-aupair-parent-container .row {
+  width: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.active-aupair-parent-container .row .personal-information-parent-container,
+.active-aupair-parent-container .row .job-information-parent-container,
+.active-aupair-parent-container .row .letter-to-the-family-parent-container,
+.active-aupair-parent-container .row .contact-information-parent-container {
+  padding: 40px 20px 40px 20px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 15px;
+}
+
+.active-aupair-parent-container .active-aupair-container,
+.active-aupair-parent-container .personal-information-parent-container,
+.active-aupair-parent-container .job-information-parent-container,
+.active-aupair-parent-container .letter-to-the-family-parent-container,
+.active-aupair-parent-container .contact-information-parent-container {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .employee-account-container {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
+  .employee-account-container .column-one {
+    width: 50%;
+  }
+  .employee-account-container .column-two {
+    width: 50%;
+  }
+  .row {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-flow: row !important;
+            flex-flow: row !important;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 68% !important;
+  }
+  .personal-information-parent-container,
+  .job-information-parent-container,
+  .letter-to-the-family-parent-container,
+  .contact-information-parent-container {
+    width: 49%;
+  }
+}
+/*# sourceMappingURL=view-employee-profile.css.map */

@@ -5,12 +5,12 @@
   Active aupair employee registration form(Activate this template in wordpress dashboard)
  */
 get_header();
- 
 ?>
     <div class="active-aupair-parent-container">
       <div class="active-aupair-container register-employee-container">
          <form id="form">
             <div class="warning-msg">
+                  
             </div>
             <div>
                <h3 class="add-border-bottom">What are you looking for?</h3>
@@ -267,10 +267,10 @@ get_header();
                <div class="center">
                  <div class="registration-countries r-e-preferred-countries-div registration-checkbox">
                      <div>
-                        <label><input type="checkbox" name="select-all" id="select-all"/>Select All</label>
-                        <label><input type="checkbox" name="select-eu" id="select-eu"/>Select EU/EØS/SCHENGEN</label>
-                        <label><input type="checkbox" name="austria" id="eu-country"/>Austria</label>
-                        <label><input type="checkbox" name="belgium" id="eu-country"/>Belgium</label>
+                        <label><input type="checkbox" name="Select All" id="select-all"/>Select All</label>
+                        <label><input type="checkbox" name="EU Countries" id="select-eu"/>Select EU/EØS/SCHENGEN</label>
+                        <label><input type="checkbox" name="Austria" id="eu-country"/>Austria</label>
+                        <label><input type="checkbox" name="Belgium" id="eu-country"/>Belgium</label>
                      </div>
                  </div>
                </div>
@@ -347,7 +347,7 @@ get_header();
                            <option value="1-6 months">1-6 months</option>
                            <option value="1-9 months">1-9 months</option>
                            <option value="1-2 years">1-2 years</option>
-                           <option value=">2 yeas">>2 years</option>
+                           <option value=">2 years">>2 years</option>
                         </select>
                      </div>
                   </div>
@@ -926,7 +926,7 @@ get_header();
                            <option value="" disabled selected>Select</option>
                            <option value="No">No</option>
                            <option value="Yes, I have National driving license">Yes, I have National driving license</option>
-                           <option value="yes, I have International driving license">Yes, I have International driving license</option>
+                           <option value="Yes, I have International driving license">Yes, I have International driving license</option>
                         </select>
                      </div>
                   </div>
@@ -1169,8 +1169,8 @@ get_header();
                   <input type="submit" name="submit" value="Register" id="register-btn"/>
                </div>
             </div>
-            <div class="login-warning-msg-container center">
-               <div class="login-warning-msg">
+            <div class="warning-msg-container-btm center">
+               <div class="warning-msg-btm">
                   
                </div>
             </div>

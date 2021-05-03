@@ -1,0 +1,95 @@
+@charset "UTF-8";
+.aupair-nanny-granny-aupair-container,
+.caregiver-for-elderly-and-live-in-help-container,
+.l-o-v-dynamic-label,
+.preferred-subjects-container,
+.activities-with-kids-container,
+.preferred-student-age-group-container,
+.price-per-hour-container,
+.weight-in-kg-container,
+.weight-in-lbs-container,
+.height-in-cm-container,
+.height-in-ft-container,
+.another-country-container,
+.describe-your-health-problems-or-allergies-container,
+.active-aupair-container {
+  display: none;
+}
+
+.upload-photo-container {
+  margin-bottom: 15px;
+}
+
+.upload-photo-container .column-one {
+  border: 3px solid #245CC5;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.upload-photo-container .column-one .employee-photo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.upload-photo-container .column-one .employee-photo-container img {
+  height: 400px;
+  width: 400px;
+  border: 10px solid #c9c8c7;
+  border-radius: 25px;
+}
+
+.upload-photo-container .column-one .employee-photo-container,
+.upload-photo-container .column-one #employee-photo,
+.upload-photo-container .column-one .photo-description-container {
+  margin-bottom: 13px;
+}
+
+.upload-photo-container .column-one #upload-button {
+  width: 100%;
+}
+
+.upload-photo-container .column-two {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.upload-photo-container .column-two p:before {
+  content: '✓';
+}
+
+@media (min-width: 992px) {
+  .price-per-hour-container .label-container {
+    width: 50%;
+  }
+  .price-per-hour-container .label-container div {
+    margin-right: 9px;
+  }
+  .price-per-hour-container .label-container h6 {
+    text-align: right;
+  }
+  .price-per-hour-container .label-container p {
+    font-size: 14px;
+    text-align: right;
+    line-height: 14px;
+  }
+  .upload-photo-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .upload-photo-container .column-one,
+  .upload-photo-container .column-two {
+    width: 49%;
+  }
+  .upload-photo-container .column-two {
+    border: none;
+  }
+}
+/*# sourceMappingURL=update-employee-profile.css.map */

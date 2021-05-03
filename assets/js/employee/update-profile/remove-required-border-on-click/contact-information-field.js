@@ -1,0 +1,44 @@
+export default $(function(){
+    //firstname
+    $('.firstname').click(function(){
+        if($('.firstname').hasClass('required-border')){
+            $('.firstname').removeClass('required-border');
+        }
+    });
+    //lastname
+    $('.lastname').click(function(){
+        if($('.lastname').hasClass('required-border')){
+            $('.lastname').removeClass('required-border');
+        }
+    });
+    //address
+    $('.address').click(function(){
+        if($('.address').hasClass('required-border')){
+            $('.address').removeClass('required-border');
+        }
+    });
+    //zipcode
+    $('.zip-code').click(function(){
+        if($('.zip-code').hasClass('required-border')){
+            $('.zip-code').removeClass('required-border');
+        }
+    });
+    //city
+    $('.city').click(function(){
+        if($('.city').hasClass('required-border')){
+            $('.city').removeClass('required-border');
+        }
+    });
+    //state/region
+    $('.state-region').click(function(){
+        if($('.state-region').hasClass('required-border')){
+            $('.state-region').removeClass('required-border');
+        }
+    });
+    //mobile phone no
+    $('.mobile-number').click(function(){
+        if($('.mobile-number').hasClass('required-border')){
+            $('.mobile-number').removeClass('required-border');
+        }
+    });
+});

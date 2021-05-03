@@ -51,7 +51,7 @@
 
 	<div id="site" class="site">
 
-		<?php
+	<?php
 		/**
 		 * Functions hooked into gwangi_header action
 		 *
@@ -59,4 +59,9 @@
 		 * @hooked gwangi_grimlock_header         - 10
 		 * @hooked gwangi_grimlock_before_content - 20
 		 */
-		do_action( 'gwangi_header' ); ?>
+		if ( current_user_can( 'subscriber' ) ){
+			do_action( 'gwangi_header_logged_in' );
+		} else {
+			do_action( 'gwangi_header_not_logged_in' );
+		}
+		?>

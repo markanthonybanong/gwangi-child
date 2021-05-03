@@ -1,0 +1,45 @@
+ .aupair-nanny-granny-aupair,
+ .r-e-would-you-take,
+ .r-e-i-can-assist,
+ .r-e-preferred-subjects,
+ .r-e-activities-with-kids,
+ .r-e-preferred-student-age-group,
+ .r-e-price-per-hour,
+ .r-e-dynamic-label,
+ .another-country,
+ .weight-in-kg,
+ .weight-in-lbs,
+ .height-in-cm,
+ .height-in-ft,
+ .describe-health-problems-allergies-container{
+     display: none;
+ }
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .r-e-price-label-container{
+        div{
+            margin-right: 9px;
+        }
+        h6{
+            text-align: right;
+        }
+        p{
+            font-size: 14px;
+            text-align: right;
+            line-height: 14px;
+        }
+        width: 50%;
+     }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { }

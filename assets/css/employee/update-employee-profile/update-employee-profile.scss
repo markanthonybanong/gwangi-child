@@ -1,0 +1,97 @@
+@import "../../../utilities/sass/variables";
+.aupair-nanny-granny-aupair-container,
+.caregiver-for-elderly-and-live-in-help-container,
+.l-o-v-dynamic-label,
+.preferred-subjects-container,
+.activities-with-kids-container,
+.preferred-student-age-group-container,
+.price-per-hour-container,
+.weight-in-kg-container,
+.weight-in-lbs-container,
+.height-in-cm-container,
+.height-in-ft-container,
+.another-country-container,
+.describe-your-health-problems-or-allergies-container,
+.active-aupair-container{
+    display: none;
+}
+
+.upload-photo-container{
+    .column-one{
+        .employee-photo-container{
+            img{
+                height: 400px;
+                width: 400px;
+                border: 10px solid $gray;
+                border-radius: 25px;
+            }
+            display: flex;
+            justify-content: center;
+        }
+        .employee-photo-container,
+        #employee-photo,
+        .photo-description-container{
+            margin-bottom: 13px;
+        }
+        #upload-button{
+            width: 100%;
+        }
+        border: 3px solid $primary-color;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+    .column-two{
+        padding: 5px;
+        margin-bottom: 5px;
+        p:before{
+          content: '✓';
+        }
+    }
+    margin-bottom: 15px;
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+   
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .price-per-hour-container{
+        .label-container{
+            div{
+                margin-right: 9px;
+            }
+            h6{
+                text-align: right;
+            }
+            p{
+                font-size: 14px;
+                text-align: right;
+                line-height: 14px;
+            }
+            width: 50%;
+         }
+    }
+    .upload-photo-container{
+        display: flex;
+       justify-content: space-between;
+
+        .column-one,
+        .column-two{
+            width: 49%;
+        }
+        .column-two{
+            border: none;
+        }
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { }

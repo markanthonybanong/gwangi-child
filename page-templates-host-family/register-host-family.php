@@ -31,7 +31,7 @@ get_header();
                     </div>
                 </div>
                 <!-- LOOKING FOR A JOB SHOW/HIDE INPUTS -->
-                <div class="aupair-nanny-granny-aupair">
+                <div class="aupair-nanny-granny-aupair" style="background: red">
                     <div class="take-care-of-children-container">
                         <h3 class="add-border-bottom">Aupair, Nanny & Granny Aupair</h3>
                             <h6>How old are the children/people the applicants has to take care of?<span id="required">*</span></h6>

@@ -104,6 +104,8 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
  */
  @import "assets/utilities/sass/variables";
  @import "assets/utilities/sass/international-telephone-input/intlTelInput";
+ @import "assets/utilities/sass/header";
+ @import "assets/utilities/sass/page-loading";
  /***
   *  MOBILE FIRST CSS
   **/
@@ -142,7 +144,14 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
     padding: 8px 8px 1px 8px;
     margin-bottom: 5px;
 }
-
+.opacity-background{
+    background: rgba(36, 92, 197, 0.1);
+}
+.list-border{
+    border-bottom: 2px solid $primary-color;
+    margin-bottom: 15px;
+    padding-bottom: 9px;
+}
 /**
  * Headings
  */
@@ -189,10 +198,12 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
         }
     }
 }
+
 .registration-countries,
 .preferred-nationalities,
 .languages-spoken-at-home,
-.applicant-currently-living-in{
+.applicant-currently-living-in,
+.preferred-countries-container .countries{
     overflow-y: auto;
     height: 300px;
     margin-bottom: 5px;
@@ -219,7 +230,7 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
      }
  }
-
+ .button-container,
  .register-btn-container{
     display: flex;
     margin-top: 15px;
@@ -230,14 +241,21 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
         }
     }
 }
-.login-warning-msg-container{
+.warning-msg-container-btm{
     display: flex;
     justify-content: center;
-    .login-warning-msg{
+    .warning-msg-btm{
         margin-top: 15px;
         p{
             text-align: center;
         }
+    }
+}
+
+.upload-photo-warning-msg-container{
+    margin-top: 15px;
+    p{
+        text-align: center;
     }
 }
 
@@ -665,7 +683,6 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
 @media (min-width: 576px) { 
 
 }
-
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { 
 
@@ -674,7 +691,7 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
     .active-aupair-container{
-        width: 90%;
+        width: 68% !important;
         padding: 80px 40px 80px 40px !important;
     }
     .registration-checkbox {
@@ -725,6 +742,7 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
         }
         margin-bottom: 15px;
     }
+    .button-container,
     .register-btn-container{
         .first-div,
         .second-div{
