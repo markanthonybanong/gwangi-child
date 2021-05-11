@@ -20,6 +20,12 @@ function child_theme_enque_scripts() {
             'restURL' => rest_url(),
             'nonce'   => wp_create_nonce('wp_rest')
         ));
+    }elseif(is_page_template('page-templates-employee/find-employee.php')) {
+        wp_enqueue_script('find-employee', get_stylesheet_directory_uri(). '/dist/find-employee.js', array('jquery'), date("h:i:s"), true);
+        wp_localize_script( 'find-employee', 'myAjax', array( 
+            'restURL' => rest_url(),
+            'nonce'   => wp_create_nonce('wp_rest')
+        ));
     }elseif(is_page_template('page-templates-host-family/register-host-family.php')) {
         wp_enqueue_script('register-host-family', get_stylesheet_directory_uri(). '/dist/register-host-family.js', false, date("h:i:s"), true);
     }

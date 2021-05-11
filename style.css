@@ -1965,6 +1965,24 @@ header .menu .down {
   padding-bottom: 9px;
 }
 
+#bold {
+  font-weight: bold;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.blurred {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
 /**
  * Headings
  */
@@ -2010,6 +2028,41 @@ header .menu .down {
   margin-bottom: 5px;
 }
 
+.pagination-container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination-container ul li {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.pagination-container ul li a {
+  border: 2px solid #245CC5;
+  padding: 4px 10px 4px 10px;
+  color: #245CC5;
+}
+
+.pagination-container ul li a:hover {
+  color: #245CC5;
+}
+
+.pagination-container ul .active a {
+  background: #245CC5;
+  color: white;
+}
+
+.pagination-container ul .disabled a {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+}
+
 /**
  * Clearings
  */
@@ -2024,6 +2077,7 @@ header .menu .down {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 15px;
 }
 
 .active-aupair-parent-container .active-aupair-container {
@@ -2031,6 +2085,28 @@ header .menu .down {
   padding: 40px 20px 40px 20px;
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.aupair-two-column-parent-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.aupair-two-column-parent-container .aupair-two-column-container {
+  width: 95%;
+}
+
+.aupair-two-column-parent-container .aupair-two-column-container .column-one,
+.aupair-two-column-parent-container .aupair-two-column-container .column-two {
+  padding: 40px 20px 40px 20px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 15px;
 }
 
 .button-container,
@@ -2259,14 +2335,6 @@ header .menu .down {
   .registration-checkbox label {
     width: 250px;
   }
-  .center {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   .registration-input {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2328,6 +2396,12 @@ header .menu .down {
   .register-btn-container .second-div input {
     margin-left: 8px;
     width: 55%;
+  }
+  .aupair-two-column-container {
+    width: 68% !important;
+  }
+  .aupair-two-column-container .column-one {
+    padding: 40px 80px 80px 80px !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

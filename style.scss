@@ -152,6 +152,17 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
     margin-bottom: 15px;
     padding-bottom: 9px;
 }
+#bold{
+    font-weight: bold;
+}
+.center{
+    display: flex;
+    justify-content: center;
+}
+.blurred{
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
 /**
  * Headings
  */
@@ -208,7 +219,38 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
     height: 300px;
     margin-bottom: 5px;
 }
+.pagination-container{
+    ul{
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+        
+            margin-left: 5px;
+            margin-right: 5px;
+            a{
+                border: 2px solid $primary-color;
+                padding: 4px 10px 4px 10px;
+                color: $primary-color;
+            }
+            a:hover{
+                color: $primary-color
+            }
+        }
+        .active a{
+            background: $primary-color;
+            color: white;
+        }
+        .disabled a{
+            pointer-events: none;
+            cursor: default;
+            opacity: 0.6;
+        }
 
+    }
+     
+}
 /**
  * Clearings
  */
@@ -224,11 +266,29 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
      display: flex;
      width: 100%;
      justify-content: center;
+     margin-bottom: 15px;
      .active-aupair-container{
         width: 95%;
         padding: 40px 20px 40px 20px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
      }
+     
+ }
+ .aupair-two-column-parent-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+    .aupair-two-column-container{
+        width: 95%;
+        .column-one,
+        .column-two{
+            padding: 40px 20px 40px 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            margin-bottom: 15px;
+        }
+    }
+     
  }
  .button-container,
  .register-btn-container{
@@ -251,19 +311,12 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
         }
     }
 }
-
 .upload-photo-warning-msg-container{
     margin-top: 15px;
     p{
         text-align: center;
     }
 }
-
-
-
-
-
-
 /**
  * Regions
  */
@@ -699,10 +752,6 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
             width: 250px;
         }
     }
-    .center{
-        display: flex;
-        justify-content: center;
-    }
     .registration-input{
         display: flex;
         width: 90%;
@@ -753,6 +802,12 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
                 margin-left: 8px;
                 width: 55%;
             }
+        }
+    }
+    .aupair-two-column-container{
+        width: 68% !important;
+        .column-one{
+            padding: 40px 80px 80px 80px !important;
         }
     }
 }

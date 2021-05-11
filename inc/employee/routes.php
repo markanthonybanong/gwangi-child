@@ -122,7 +122,8 @@
                 'mobile_phone_no'                                         => $request['mobilePhoneNo'],
                 'letter'                                                  => $request['letter'],  
                 'is_activated'                                            => 0,
-                'year_created'                                            => $request['yearCreated']
+                'year_created'                                            => $request['yearCreated'],
+                'user_type'                                               => 'employee'
             ),
             array(
                 '%d',
@@ -243,7 +244,8 @@
                 '%s',
                 '%s',
                 '%d',
-                '%d'
+                '%d',
+                '%s',
             )
         );
         if($result){
@@ -396,7 +398,8 @@
             'state_region'                                            => $request['stateRegion'],
             'country'                                                 => $request['country'],
             'mobile_phone_no'                                         => $request['mobilePhoneNo'],
-            'letter'                                                  => $request['letter']
+            'letter'                                                  => $request['letter'],
+            'user_type'                                               => 'employee'
         );
         $where  = array("wp_user_id" => get_current_user_id());
         $result = $wpdb->update("aupair_registered_employee", $data, $where);
@@ -438,7 +441,6 @@
         }
         die();
     }
-    //delete this after
     function get_directory(){
         // $employee_photo_path = $_SERVER['DOCUMENT_ROOT'].'/activeaupair/wp-content/themes/gwangi-child/users-photo/employee/';
         $document_cwd  = getcwd();
@@ -468,7 +470,6 @@
         }
         die();
     }
-
     add_action('rest_api_init', function(){
         register_rest_route( 'activeAupair/v1', '/insertIntoAupairRegisteredEmployee', [
             'methods'  => 'POST',

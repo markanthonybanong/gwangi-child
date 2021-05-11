@@ -4,18 +4,6 @@
  *
  * @package gwangi
  */
-if ( ! function_exists( 'gwangi_header_image_style' ) ) :
-	/**
-	 * Print the style attribute for the #custom_header div to display the header image.
-	 *
-	 * @since 1.0.0
-	 */
-	function gwangi_header_image_style() {
-		if ( has_header_image() ) {
-			echo 'style="background-image: url(' . esc_url_raw( get_header_image() ) . ');"';
-		}
-	}
-endif;
 
 if ( ! function_exists( 'gwangi_header_not_logged_in' ) ) :
 	/**

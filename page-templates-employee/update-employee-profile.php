@@ -403,11 +403,11 @@ get_header();
                                 <div class="field-container">
                                     <select id="field" name="duration-of-stay" class="duration-of-stay">
                                         <option value="" disabled selected>Select</option>
-                                        <option value="1-3 months">1-3 months</option>
-                                        <option value="1-6 months">1-6 months</option>
-                                        <option value="1-9 months">1-9 months</option>
-                                        <option value="1-2 years">1-2 years</option>
-                                        <option value=">2 years">>2 years</option>
+                                        <option value="1-3 Months">1-3 Months</option>
+                                        <option value="1-6 Months">1-6 Months</option>
+                                        <option value="1-9 Months">1-9 Months</option>
+                                        <option value="1-2 Years">1-2 Years</option>
+                                        <option value=">2 Years">>2 Years</option>
                                     </select>
                                 </div>
                             </div>

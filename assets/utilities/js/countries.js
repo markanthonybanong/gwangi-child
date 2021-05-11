@@ -18,7 +18,6 @@ export function countries(){
         'luxemberg',
         'malta',
         'netherlands',
-        'norway',
         'poland',
         'portugal',
         'slovakia',

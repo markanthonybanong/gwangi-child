@@ -21,6 +21,7 @@ require 'inc/employee/routes.php';
 require 'inc/background-hooks.php';
 require 'inc/template-functions.php';
 require 'inc/template-hooks.php';
- 
+//utilities
+require 'assets/utilities/php/number.php';
 
  
