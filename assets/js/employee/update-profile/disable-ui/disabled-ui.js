@@ -1,3 +1,3 @@
 export default $(function(){
-    $('.upload-photo-container #upload-button').attr('disabled', true);
+    // $('.upload-photo-container #upload-button').attr('disabled', true);
 });

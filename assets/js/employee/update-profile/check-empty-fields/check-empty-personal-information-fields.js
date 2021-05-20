@@ -19,6 +19,19 @@ export function checkEmptyPersonalInformationFields(isThereEmptyFields){
         $('.height-ft').addClass('required-border');
         $('.warning-msg').append($('<p id="required"></p>').text('Height in ft cannot be left empty'));
     }
+    if($('.another-country-container:visible').length && $('.another-country-container .select').val() === null){
+        isThereEmptyFields.push(true);
+        $('.another-country-container .select').addClass('required-border');
+        $('.warning-msg').append($('<p id="required"></p>').text('Living in cannot be left empty'));
+    }
+    if($('.another-country-container:visible').length && $('.visa-status-select').val() === null){
+        isThereEmptyFields.push(true);
+        $('.visa-status-select').addClass('required-border');
+        $('.warning-msg').append($('<p id="required"></p>').text('Visa status cannot be left empty'));
+    }
+
+
+
     if($.trim($('.name-of-school-college-university').val()) === ""){
         isThereEmptyFields.push(true);
         $('.name-of-school-college-university').addClass('required-border');

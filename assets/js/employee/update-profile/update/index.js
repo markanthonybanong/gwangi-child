@@ -1,6 +1,6 @@
 import update from './update';
-import uploadPhoto from './upload-photo';
+import updatePhoto from './update-photo';
 export default  {
     update,
-    uploadPhoto
+    uploadPhoto: updatePhoto
 }

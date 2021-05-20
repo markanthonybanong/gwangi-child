@@ -1969,15 +1969,6 @@ header .menu .down {
   font-weight: bold;
 }
 
-.center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .blurred {
   filter: blur(8px);
   -webkit-filter: blur(8px);
@@ -2328,6 +2319,14 @@ header .menu .down {
 }
 
 @media (min-width: 992px) {
+  .center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .active-aupair-container {
     width: 68% !important;
     padding: 80px 40px 80px 40px !important;

@@ -1,23 +1,23 @@
 export default $(function(){ // DOM ready
-    const jobLabels                                 = [];
-    let onFreshLoad                                 = true;
+    const jobLabels                                  = [];
+    let onFreshLoad                                  = true;
     //containers
     const dynamicLabel                               = $('.l-o-v-dynamic-label');
-    const aupairNannyGrannyAuPairContainer          = $('.aupair-nanny-granny-aupair-container');
-    const careGiverForElderlyAndLiveInHelpContainer = $('.caregiver-for-elderly-and-live-in-help-container');
-    const preferredSubjectsContainer                = $('.preferred-subjects-container');
-    const activitiesWithKidsContainer               = $('.activities-with-kids-container');
-    const preferredStudentAgeGroupContainer         = $('.preferred-student-age-group-container');
-    const pricePerHourContainer                     = $('.price-per-hour-container');
+    const aupairNannyGrannyAuPairContainer           = $('.aupair-nanny-granny-aupair-container');
+    const careGiverForElderlyAndLiveInHelpContainer  = $('.caregiver-for-elderly-and-live-in-help-container');
+    const preferredSubjectsContainer                 = $('.preferred-subjects-container');
+    const activitiesWithKidsContainer                = $('.activities-with-kids-container');
+    const preferredStudentAgeGroupContainer          = $('.preferred-student-age-group-container');
+    const pricePerHourContainer                      = $('.price-per-hour-container');
     //checkboxes
-    const aupairCheckBox                            = $('#aupair');
-    const nannyCheckBox                             = $('#nanny');
-    const grannyAupairCheckBox                      = $('#granny-aupair');
-    const careGiverForElderlyCheckBox               = $('#caregiver-for-elderly');
-    const liveInHelpCheckBox                        = $('#live-in-help');
-    const liveInTutorCheckBox                       = $('#live-in-tutor');
-    const onlineTutorCheckBox                       = $('#online-tutor');
-    const virtualChildCareCheckBox                  = $('#virtual-childcare');
+    const aupairCheckBox                             = $('#aupair');
+    const nannyCheckBox                              = $('#nanny');
+    const grannyAupairCheckBox                       = $('#granny-aupair');
+    const careGiverForElderlyCheckBox                = $('#caregiver-for-elderly');
+    const liveInHelpCheckBox                         = $('#live-in-help');
+    const liveInTutorCheckBox                        = $('#live-in-tutor');
+    const onlineTutorCheckBox                        = $('#online-tutor');
+    const virtualChildCareCheckBox                   = $('#virtual-childcare');
     function disableUncheckBoxIfMax(){
         const checkCheckBox = $('.looking-for-a-job-as-container .check');
         if(checkCheckBox.length >= 2) {

@@ -155,10 +155,7 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
 #bold{
     font-weight: bold;
 }
-.center{
-    display: flex;
-    justify-content: center;
-}
+
 .blurred{
     filter: blur(8px);
     -webkit-filter: blur(8px);
@@ -209,7 +206,7 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
         }
     }
 }
-
+ 
 .registration-countries,
 .preferred-nationalities,
 .languages-spoken-at-home,
@@ -743,6 +740,10 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+    .center{
+        display: flex;
+        justify-content: center;
+    }
     .active-aupair-container{
         width: 68% !important;
         padding: 80px 40px 80px 40px !important;

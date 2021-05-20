@@ -9,7 +9,6 @@
         }
     endif;
     add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
-             
      
     function child_theme_configurator_css() {
         //for development only remove, date and random

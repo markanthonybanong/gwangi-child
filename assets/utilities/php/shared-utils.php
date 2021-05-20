@@ -1,5 +1,11 @@
 <?php
     class Shared_Utils{
+        private $_eu_countries     = null;
+        private $_normal_countries = null;
+        //order matter
+        public function __construct(){
+           
+        }
         public function selected_array_cb($arr_check_box, $item){
             $array_cb = array();
             $checked  = null;
@@ -25,6 +31,7 @@
             }
             return $input_val;
         }
+       
     }
 
 ?>

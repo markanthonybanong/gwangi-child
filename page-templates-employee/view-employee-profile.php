@@ -5,10 +5,13 @@
  */
 get_header();
 ?>
-<div class="page-loading-container">
-    <div class="page-loading">
-    </div>
-</div>
+<?php 
+    require get_theme_file_path('inc/employee/view-employee/view-employee-db.php');
+    require get_theme_file_path('inc/employee/view-employee/view-employee-utils.php');
+
+    $db    = new View_Employee_Db();
+    $utils = new View_Employee_Utils();
+?>
 <div class="active-aupair-parent-container">
     <div class="active-aupair-container">
         <div class="employee-account-container">

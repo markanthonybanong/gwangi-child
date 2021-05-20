@@ -22,7 +22,19 @@ export default $(function (){
         if($('.height-ft').hasClass('required-border')){
             $('.height-ft').removeClass('required-border');
         }
-    });     
+    });
+    //living in     
+    $('.living-in .select').click( function(){
+        if($('.living-in .select').hasClass('required-border')){
+            $('.living-in .select').removeClass('required-border');
+        }
+    });
+    //visa status
+    $('.visa-status .visa-status-select').click( function(){
+        if($('.visa-status-select').hasClass('required-border')){
+            $('.visa-status-select').removeClass('required-border');
+        }
+    });
     //name of school college & university
     $('.name-of-school-college-university').click(function(){
         if($('.name-of-school-college-university').hasClass('required-border')){

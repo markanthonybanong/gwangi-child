@@ -90,8 +90,10 @@ if ( ! function_exists( 'gwangi_header_logged_in' ) ) :
 							}
 						?>
 				</div>
+				
 				<div class="user-menu-container">
 					<?php 
+					#use add query arg here
 						wp_nav_menu( array(
 							'menu'           => 'EmployeeUserMenu',
 							'menu_id'        => 'user-menu',
