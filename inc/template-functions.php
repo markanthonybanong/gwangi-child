@@ -76,11 +76,11 @@ if ( ! function_exists( 'gwangi_header_logged_in' ) ) :
 					 <?php
 					       //add if later
 					        wp_nav_menu( array(
-								'menu'           => 'EmployeeUserMenu',
+								'menu'           => 'UserMenu',
 								'menu_id'        => 'user-menu-mobile',
 								'container'      => false,
 							) );
-							
+					        //center menu
 							if ( has_nav_menu( 'primary' ) ) {
 								wp_nav_menu( array(
 									'theme_location' => 'primary',
@@ -93,13 +93,20 @@ if ( ! function_exists( 'gwangi_header_logged_in' ) ) :
 				
 				<div class="user-menu-container">
 					<?php 
-					#use add query arg here
+					#use add_query_arg here, to create link for view profile
+					    //right menu
 						wp_nav_menu( array(
-							'menu'           => 'EmployeeUserMenu',
+							'theme_location' => 'aupair-login-user-menu',
+							'menu'           => 'UserMenu',
 							'menu_id'        => 'user-menu',
-							'container'      => false,
-							'theme_location' => 'secondary'
+							'container'      => false
 						) );
+						// wp_nav_menu( array(
+						// 	'theme_location' => 'secondary',
+						// 	'menu'           => 'EmployeeUserMenu',
+						// 	'menu_id'        => 'user-menu',
+						// 	'container'      => false
+						// ) );
 					?>
 				</div>
 			</div>
