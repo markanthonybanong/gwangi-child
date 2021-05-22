@@ -17,6 +17,7 @@ function my_phpmailer_example( $phpmailer ) {
 require 'inc/enqueue-styles.php';
 require 'inc/enqueue-scripts.php';
 require 'inc/employee/routes.php';
+require 'inc/routes.php';
 require 'inc/background-hooks.php';
 require 'inc/template-functions.php';
 require 'inc/template-hooks.php';

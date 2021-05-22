@@ -146,7 +146,20 @@
                 array_push($age_groups, 'Seniors(60+)');
             }
             return $this->_string_utils->convert_array_items_to_single_string($age_groups);
-        }   
+        }
+        private function setLOVjobTitle(){
+            $jobs = array();
+            if($this->_employee->looking_for_job_as_live_in_tutor  === "1"){
+                array_push($jobs, 'Live in tutor');
+            }
+            if($this->_employee->looking_for_job_as_online_tutor === "1"){
+                array_push($jobs, 'Online tutor');
+            }
+            if($this->_employee->looking_for_job_as_virtual_childcare  === "1"){
+                array_push($jobs, 'Virtual Childcare');
+            }
+            return $this->_string_utils->convert_array_items_to_single_string($jobs);
+        }
         public function looking_for_job(){
             $jobs = array();
             if($this->_employee->looking_for_job_as_aupair === "1"){
@@ -319,11 +332,54 @@
                                                 </div>';
                 $price_per_hour               = '<div class="price-per-hour-container">
                                                     <h5>Price per hour</h5>
-                                                    <h5>Amount</h5>
+                                                    <h6>Amount</h6>
                                                     <p>'.$this->_employee->ov_price_per_hour_amount.'</p>
-                                                    <h5>Currency</h5>
+                                                    <h6>Currency</h6>
                                                     <p>'.$this->_employee->ov_price_per_hour_currency.'</p>
                                                 </div>';
+                $mark_up .= '<div class="job-title-container">
+                                <h5 class="list-border">'.$this->setLOVjobTitle().'</h5>
+                            </div>';
+                //selected 2 in LOV
+                if(
+                    $this->_employee->looking_for_job_as_live_in_tutor === "1" && $this->_employee->looking_for_job_as_online_tutor === "1" ||
+                    $this->_employee->looking_for_job_as_live_in_tutor === "1" && $this->_employee->looking_for_job_as_virtual_childcare === "1" ||
+                    $this->_employee->looking_for_job_as_online_tutor  === "1" && $this->_employee->looking_for_job_as_virtual_childcare === "1"
+                  ){
+                    
+                    $mark_up .= $preferred_subject;
+                    $mark_up .= $activities_with_kids;
+                    $mark_up .= $preferred_student_age_group;
+                    $mark_up .= $price_per_hour;
+                }
+                //selected 1 IN LOV
+                if(
+                    $this->_employee->looking_for_job_as_live_in_tutor === "1" &&
+                    $this->_employee->looking_for_job_as_online_tutor === "0" &&
+                    $this->_employee->looking_for_job_as_virtual_childcare === "0"
+                ){
+                    $mark_up .= $preferred_subject;
+                    $mark_up .= $activities_with_kids;
+                    $mark_up .= $preferred_student_age_group;
+                }
+                if(
+                    $this->_employee->looking_for_job_as_live_in_tutor === "0" &&
+                    $this->_employee->looking_for_job_as_online_tutor === "1" &&
+                    $this->_employee->looking_for_job_as_virtual_childcare === "0"
+                ){
+                    $mark_up .= $preferred_subject;
+                    $mark_up .= $preferred_student_age_group;
+                    $mark_up .= $price_per_hour;
+                }
+                if(
+                    $this->_employee->looking_for_job_as_live_in_tutor === "0" &&
+                    $this->_employee->looking_for_job_as_online_tutor === "0" &&
+                    $this->_employee->looking_for_job_as_virtual_childcare === "1"
+                ){
+                    $mark_up .= $activities_with_kids;
+                    $mark_up .= $preferred_student_age_group;
+                    $mark_up .= $price_per_hour;
+                }
             }
             return $mark_up;
         }

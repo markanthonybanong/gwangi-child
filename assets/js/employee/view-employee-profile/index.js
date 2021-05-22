@@ -1,1 +1,1 @@
-//import getUserData from './get-user-data/index';
+import getUserData from './get-user-data/index';
