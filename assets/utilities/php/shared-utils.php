@@ -1,30 +1,24 @@
 <?php
     class Shared_Utils{
-        private $_eu_countries     = null;
-        private $_normal_countries = null;
-        //order matter
         public function __construct(){
            
         }
-        public function selected_array_cb($arr_check_box, $item){
-            $array_cb = array();
+        #filter - used in find employe, etc.
+        public function filter_selected_array_cb($arr_check_box, $item){
             $checked  = null;
-            if(isset($_POST[$arr_check_box])){
-                $array_cb = $_POST[$arr_check_box];
-            }
-            if(in_array($item, $array_cb)){
+            if(isset($_POST[$arr_check_box]) && in_array($item, $_POST[$arr_check_box])){
                 $checked = 'checked';
             }
             return $checked;
         }
-        public function selected_select_item($select_name, $value){
+        public function filter_selected_select_item($select_name, $value){
             $selected = null;
             if( $value === $_POST[$select_name]){
                 $selected = 'selected';
             }
             return $selected;
         }
-        public function input_value($input_name){
+        public function filter_input_value($input_name){
             $input_val = null;
             if(isset($_POST[$input_name])){
                 $input_val = $_POST[$input_name];

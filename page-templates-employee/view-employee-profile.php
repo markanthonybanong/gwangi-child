@@ -34,11 +34,12 @@ get_header();
                 <?php
                     $photo  = $employee_data->photo;
                     if( $photo != ""){
-                        $imgSrc = get_stylesheet_directory_uri().'/users-photo/employee/'.$photo;
-                        echo "<img src='".$imgSrc."' alt='employee-photo'>";
+                        $img_src   = get_stylesheet_directory_uri().'/users-photo/employee/'.$photo;
+                        $img_class = ($employee_data->photo_privacy === 'Registered Members' && $employee_data->wp_user_id != get_current_user_id()) ? "blurred" : null;
+                        echo "<img src='$img_src' alt='employee-photo' class='$img_class'>";
                     } else {
-                        $imgSrc = get_stylesheet_directory_uri().'/users-photo/avatars/user-avatar-thumb-square.png';
-                        echo "<img src='".$imgSrc."' alt='employee-photo'>";
+                        $img_src = get_stylesheet_directory_uri().'/users-photo/avatars/user-avatar-thumb-square.png';
+                        echo "<img src='$img_src' alt='employee-photo'>";
                     }
                 ?>
             </div>

@@ -1,3 +1,0 @@
-<?php
-$test = 'TEST PHP';
-?>
