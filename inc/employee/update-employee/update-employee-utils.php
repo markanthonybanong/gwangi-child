@@ -38,13 +38,6 @@
             }
             return $checked;
         }
-        public function test(){
-            $aar = array();
-            for ($i=0; $i < count($this->_employee_preferred_countries); $i++) { 
-                array_push($aar, $this->_employee_preferred_countries[$i]->country);
-            }
-            return $aar;
-        }
         //loking for a job as
         public function selected_looking_for_a_job($form, $job_name){
             $checked = null;

@@ -76,6 +76,7 @@ if ( ! function_exists( 'gwangi_header_logged_in' ) ) :
 					 <?php
 					       //add if later
 					        wp_nav_menu( array(
+								'theme_location' => 'aupair-login-user-menu',
 								'menu'           => 'UserMenu',
 								'menu_id'        => 'user-menu-mobile',
 								'container'      => false,
@@ -101,12 +102,6 @@ if ( ! function_exists( 'gwangi_header_logged_in' ) ) :
 							'menu_id'        => 'user-menu',
 							'container'      => false
 						) );
-						// wp_nav_menu( array(
-						// 	'theme_location' => 'secondary',
-						// 	'menu'           => 'EmployeeUserMenu',
-						// 	'menu_id'        => 'user-menu',
-						// 	'container'      => false
-						// ) );
 					?>
 				</div>
 			</div>

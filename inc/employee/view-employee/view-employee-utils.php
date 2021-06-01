@@ -186,7 +186,7 @@
             if($this->_employee->looking_for_job_as_virtual_childcare === "1"){
                 array_push($jobs, "Virtual Childcare");
             }
-            return (count($jobs) === 2) ? "$jobs[0] & $jobs[1]":$jobs[0];
+            return (count($jobs) === 2) ? "$jobs[0] & $jobs[1] jobs":"$jobs[0] job";
         }
         public function preferred_countries(){
             $preferred_countries = null;
@@ -318,25 +318,6 @@
                 $this->_employee->looking_for_job_as_online_tutor === "1" ||
                 $this->_employee->looking_for_job_as_virtual_childcare === "1"
             ){
-                $preferred_subject            = '<div class="preferred-subjects-container">
-                                                    <h5>Preferred subjects</h5>
-                                                    <p>'.$this->selected_preferred_subjects().'</p>
-                                                </div>';
-                $activities_with_kids         = '<div class="activities-with-kids-container">
-                                                    <h5>Activities with kids</h5>
-                                                    <p>'.$this->selected_activities_with_kids().'</p>
-                                                </div>';
-                $preferred_student_age_group  = '<div class="preferred-student-age-group-container">
-                                                    <h5>Preferred student age group</h5>
-                                                    <p>'.$this->selected_preferred_student_age_group().'</p>
-                                                </div>';
-                $price_per_hour               = '<div class="price-per-hour-container">
-                                                    <h5>Price per hour</h5>
-                                                    <h6>Amount</h6>
-                                                    <p>'.$this->_employee->ov_price_per_hour_amount.'</p>
-                                                    <h6>Currency</h6>
-                                                    <p>'.$this->_employee->ov_price_per_hour_currency.'</p>
-                                                </div>';
                 $mark_up .= '<div class="job-title-container">
                                 <h5 class="list-border">'.$this->setLOVjobTitle().'</h5>
                             </div>';
@@ -346,11 +327,25 @@
                     $this->_employee->looking_for_job_as_live_in_tutor === "1" && $this->_employee->looking_for_job_as_virtual_childcare === "1" ||
                     $this->_employee->looking_for_job_as_online_tutor  === "1" && $this->_employee->looking_for_job_as_virtual_childcare === "1"
                   ){
-                    
-                    $mark_up .= $preferred_subject;
-                    $mark_up .= $activities_with_kids;
-                    $mark_up .= $preferred_student_age_group;
-                    $mark_up .= $price_per_hour;
+                    $mark_up .= '<div class="preferred-subjects-container opacity-background">
+                                    <h5>Preferred subjects</h5>
+                                    <p>'.$this->selected_preferred_subjects().'</p>
+                                </div>';
+                    $mark_up .=  '<div class="activities-with-kids-container">
+                                    <h5>Activities with kids</h5>
+                                    <p>'.$this->selected_activities_with_kids().'</p>
+                                </div>';
+                    $mark_up .= '<div class="preferred-student-age-group-container opacity-background">
+                                    <h5>Preferred student age group</h5>
+                                    <p>'.$this->selected_preferred_student_age_group().'</p>
+                                </div>';
+                    $mark_up .= '<div class="price-per-hour-container">
+                                    <h5>Price per hour</h5>
+                                    <h6>Amount</h6>
+                                    <p>'.$this->_employee->ov_price_per_hour_amount.'</p>
+                                    <h6>Currency</h6>
+                                    <p>'.$this->_employee->ov_price_per_hour_currency.'</p>
+                                </div>';
                 }
                 //selected 1 IN LOV
                 if(
@@ -358,27 +353,60 @@
                     $this->_employee->looking_for_job_as_online_tutor === "0" &&
                     $this->_employee->looking_for_job_as_virtual_childcare === "0"
                 ){
-                    $mark_up .= $preferred_subject;
-                    $mark_up .= $activities_with_kids;
-                    $mark_up .= $preferred_student_age_group;
+                    $mark_up .= '<div class="preferred-subjects-container opacity-background">
+                                    <h5>Preferred subjects</h5>
+                                    <p>'.$this->selected_preferred_subjects().'</p>
+                                </div>';
+                    $mark_up .= '<div class="activities-with-kids-container">
+                                    <h5>Activities with kids</h5>
+                                    <p>'.$this->selected_activities_with_kids().'</p>
+                                </div>';
+                    $mark_up .= '<div class="preferred-student-age-group-container opacity-background">
+                                    <h5>Preferred student age group</h5>
+                                    <p>'.$this->selected_preferred_student_age_group().'</p>
+                                </div>';
                 }
                 if(
                     $this->_employee->looking_for_job_as_live_in_tutor === "0" &&
                     $this->_employee->looking_for_job_as_online_tutor === "1" &&
                     $this->_employee->looking_for_job_as_virtual_childcare === "0"
                 ){
-                    $mark_up .= $preferred_subject;
-                    $mark_up .= $preferred_student_age_group;
-                    $mark_up .= $price_per_hour;
+                    $mark_up .= '<div class="preferred-subjects-container opacity-background">
+                                    <h5>Preferred subjects</h5>
+                                    <p>'.$this->selected_preferred_subjects().'</p>
+                                </div>';
+                    $mark_up .= '<div class="preferred-student-age-group-container">
+                                    <h5>Preferred student age group</h5>
+                                    <p>'.$this->selected_preferred_student_age_group().'</p>
+                                </div>';
+                    $mark_up .= '<div class="price-per-hour-container opacity-background">
+                                    <h5>Price per hour</h5>
+                                    <h6>Amount</h6>
+                                    <p>'.$this->_employee->ov_price_per_hour_amount.'</p>
+                                    <h6>Currency</h6>
+                                    <p>'.$this->_employee->ov_price_per_hour_currency.'</p>
+                                </div>';
                 }
                 if(
                     $this->_employee->looking_for_job_as_live_in_tutor === "0" &&
                     $this->_employee->looking_for_job_as_online_tutor === "0" &&
                     $this->_employee->looking_for_job_as_virtual_childcare === "1"
                 ){
-                    $mark_up .= $activities_with_kids;
-                    $mark_up .= $preferred_student_age_group;
-                    $mark_up .= $price_per_hour;
+                    $mark_up .= '<div class="activities-with-kids-container opacity-background">
+                                    <h5>Activities with kids</h5>
+                                    <p>'.$this->selected_activities_with_kids().'</p>
+                                </div>';
+                    $mark_up .= '<div class="preferred-student-age-group-container">
+                                    <h5>Preferred student age group</h5>
+                                    <p>'.$this->selected_preferred_student_age_group().'</p>
+                                </div>';
+                    $mark_up .= '<div class="price-per-hour-container opacity-background">
+                                    <h5>Price per hour</h5>
+                                    <h6>Amount</h6>
+                                    <p>'.$this->_employee->ov_price_per_hour_amount.'</p>
+                                    <h6>Currency</h6>
+                                    <p>'.$this->_employee->ov_price_per_hour_currency.'</p>
+                                </div>';
                 }
             }
             return $mark_up;

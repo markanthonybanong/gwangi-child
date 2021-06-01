@@ -24,24 +24,22 @@ get_header();
 ?>
 <div class="active-aupair-parent-container">
     <div class="active-aupair-container">
-        <pre>
-            <?php
-             #Test
-            ?>
-        </pre>
         <div class="employee-account-container">
             <div class="column-one">
-                <?php
-                    $photo  = $employee_data->photo;
-                    if( $photo != ""){
-                        $img_src   = get_stylesheet_directory_uri().'/users-photo/employee/'.$photo;
-                        $img_class = ($employee_data->photo_privacy === 'Registered Members' && $employee_data->wp_user_id != get_current_user_id()) ? "blurred" : null;
-                        echo "<img src='$img_src' alt='employee-photo' class='$img_class'>";
-                    } else {
-                        $img_src = get_stylesheet_directory_uri().'/users-photo/avatars/user-avatar-thumb-square.png';
-                        echo "<img src='$img_src' alt='employee-photo'>";
-                    }
-                ?>
+                    <?php
+                        $photo  = $employee_data->photo;
+                        if( $photo != ""){
+                            $img_src   = get_stylesheet_directory_uri().'/users-photo/employee/'.$photo;
+                            $img_class = ($employee_data->photo_privacy === 'Registered Members' && $employee_data->wp_user_id != get_current_user_id()) ? "blurred" : null;
+                      
+                            echo "<div class='employee-photo-container'><img src='$img_src' alt='employee-photo' class='$img_class'></div>";
+                        } else {
+                            $img_src = get_stylesheet_directory_uri().'/users-photo/avatars/user-avatar-thumb-square.png';
+                            echo "<div class='employee-photo-container'><img src='$img_src' alt='employee-photo'></div>";
+                        }
+                        echo '<h5 id="photo-description"> '.$employee_data->photo_description.' </h5>';
+                    ?>                       
+             
             </div>
             <div class="column-two">
                 <?php
@@ -49,7 +47,7 @@ get_header();
                     $preferred_countries = $utils->preferred_countries();
                     echo "<h3>$employee_data->firstname $employee_data->lastname living in $employee_data->employee_living_in</h3>";
                     echo  "<h5>$employee_data->firstname $employee_data->lastname($employee_data->age), $employee_data->nationality
-                            living in $employee_data->employee_living_in looking for $looking_for_job job in $preferred_countries for
+                            living in $employee_data->employee_living_in looking for $looking_for_job in $preferred_countries for
                             $employee_data->duration_of_stay.                     
                           </h5>";
                 ?>

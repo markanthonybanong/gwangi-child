@@ -1,6 +1,6 @@
 (function($) { // Begin jQuery
     $(function() { // DOM ready
-      $('.menu-item-has-children>a').append('<span class="arrow down"></span>')
+      $('.menu-item-has-children>a').append('<span class="arrow down"></span>');
       $('#nav-toggle').on('click', function() {
         $('.menu').slideToggle();
         // Hamburger to X toggle

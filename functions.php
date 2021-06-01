@@ -13,10 +13,10 @@ function my_phpmailer_example( $phpmailer ) {
     $phpmailer->Password = 'coderguy1996coderguy1996';
 }
 
-
 require 'inc/enqueue-styles.php';
 require 'inc/enqueue-scripts.php';
 require 'inc/employee/routes.php';
+require 'inc/host-family/routes.php';
 require 'inc/routes.php';
 require 'inc/background-hooks.php';
 require 'inc/template-functions.php';

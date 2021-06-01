@@ -1,3 +1,4 @@
+import photoDescription from './upload-photo/photo-description';
 import lookingForAJobAs from './what-are-you-looking-for/looking-for-a-job-as';
 import aupairNannyGrannyAupair from './what-are-you-looking-for/aupair-nanny-grannyaupair';
 import careGiverForElderlyAndLiveInHelp from './what-are-you-looking-for/caregiverforelderly-liveinhelp';

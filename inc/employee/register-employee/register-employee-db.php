@@ -123,20 +123,12 @@
                 'country'                                                 => $employee->country,
                 'mobile_phone_no'                                         => $employee->mobile_phone_no,
                 'letter'                                                  => $employee->letter,
-                'is_activated'                                            => 0,
-                'year_created'                                            => date("Y"),
-                'user_type'                                               => 'employee',
                 'age'                                                     => $employee->age,
-                'employee_living_in'                                      => $employee->employee_living_in
+                'employee_living_in'                                      => $employee->employee_living_in,
+                'user_type'                                               => 'employee'
             );
-            $result = $this->_wpdb->insert('aupair_registered_employee', $data);
-            // $val = null;
-            // if($result){
-            //     $val = $result;
-            // } else {
-            //     $val = $this->_wpdb->last_error;
-            // }
-            return $this->_wpdb->last_error;
+            add_user_meta($employee->wp_user_id, 'user_type', 'employee');
+            return $this->_wpdb->insert('aupair_registered_employee', $data);
         }
         public function insert_preferred_country($wp_user_id, $country){
             $this->_wpdb->insert(
@@ -144,8 +136,6 @@
                 array(
                     'wp_user_id'   => $wp_user_id,
                     'country'      => $country,
-                    'is_activated' => 0,
-                    'year_created' => date("Y")
                 ));
         }
     }

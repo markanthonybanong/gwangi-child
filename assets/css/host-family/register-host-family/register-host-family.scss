@@ -1,0 +1,37 @@
+.aupair-nanny-granny-aupair-container,
+.caregiverforelderly-liveinhelp-container,
+.tutor-who-can-teach-subject-container,
+.tutor-who-can-do-activities-container,
+.student-age-group-tutor-would-teach-container,
+.dynamic-label,
+.describe-children-special-needs-container,
+.describe-people-special-needs-container{
+    display: none;
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+    .price-label-container{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        div{
+            margin-right: 9px;
+        }
+        h6{
+            text-align: right;
+        }
+        width: 50%;
+     }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { }

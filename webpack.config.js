@@ -8,7 +8,11 @@ module.exports = {
         // './assets/js/employee/update-profile/index.js',
         // './assets/js/employee/register-employee/index.js',
         // './assets/js/employee/view-employee-profile/index.js',
-        './assets/js/employee/find-employee/index.js',
+        // './assets/js/employee/find-employee/index.js',
+        // './assets/js/host-family/register-host-family/index.js',
+        // './assets/js/host-family/update-host-family/index.js',
+        // './assets/js/host-family/view-host-family/index.js',
+         './assets/js/host-family/find-host-family/index.js',
     ],
     plugins: [
         new webpack.ProvidePlugin({
@@ -20,7 +24,11 @@ module.exports = {
         // filename: 'update-employee-profile.js',
         // filename: 'register-employee.js',
         // filename: 'view-employee-profile.js',
-        filename: 'find-employee.js',
+        // filename: 'find-employee.js',
+        // filename: 'register-host-family.js',
+        // filename: 'update-host-family-profile.js',
+        // filename: 'view-host-family-profile.js',
+        filename: 'find-host-family.js',
         path: path.resolve(__dirname, 'dist')
     }
 };

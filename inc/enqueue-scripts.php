@@ -28,6 +28,20 @@ function child_theme_enque_scripts() {
         ));
     }elseif(is_page_template('page-templates-host-family/register-host-family.php')) {
         wp_enqueue_script('register-host-family', get_stylesheet_directory_uri(). '/dist/register-host-family.js', false, date("h:i:s"), true);
+    }elseif(is_page_template('page-templates-host-family/update-host-family-profile.php')) {
+        wp_enqueue_script('update-host-family-profile', get_stylesheet_directory_uri(). '/dist/update-host-family-profile.js', false, date("h:i:s"), true);
+        wp_localize_script('update-host-family-profile', 'myAjax', array( 
+            'restURL' => rest_url(),
+            'nonce'   => wp_create_nonce('wp_rest')
+        ));
+    }elseif(is_page_template('page-templates-host-family/view-host-family-profile.php')) {
+        wp_enqueue_script('view-host-family-profile', get_stylesheet_directory_uri(). '/dist/view-host-family-profile.js', false, date("h:i:s"), true);
+        wp_localize_script('view-host-family-profile', 'myAjax', array( 
+            'restURL' => rest_url(),
+            'nonce'   => wp_create_nonce('wp_rest')
+        ));
+    }elseif(is_page_template('page-templates-host-family/find-host-family.php')) {
+        wp_enqueue_script('find-host-family', get_stylesheet_directory_uri(). '/dist/find-host-family.js', false, date("h:i:s"), true);
     }
 }
 add_action('wp_enqueue_scripts', 'child_theme_enque_scripts');

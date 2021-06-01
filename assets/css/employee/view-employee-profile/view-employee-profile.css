@@ -22,22 +22,40 @@
 }
 
 .active-aupair-parent-container .active-aupair-container .employee-account-container .column-one {
+  border: 3px solid #245CC5;
+  padding: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.active-aupair-parent-container .active-aupair-container .employee-account-container .column-one img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 4px solid #245CC5;
+.active-aupair-parent-container .active-aupair-container .employee-account-container .column-one .employee-photo-container {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  max-width: 300px;
+  width: 100%;
+  padding: 10px;
+}
+
+.active-aupair-parent-container .active-aupair-container .employee-account-container .column-one .employee-photo-container img {
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+}
+
+.active-aupair-parent-container .active-aupair-container .employee-account-container .column-one #photo-description {
+  margin-top: 15px;
 }
 
 .active-aupair-parent-container .active-aupair-container .employee-account-container .column-two {
+  padding: 15px;
   margin-top: 15px;
 }
 

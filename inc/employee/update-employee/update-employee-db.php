@@ -14,14 +14,12 @@
         public function delete_preferred_countries(){
             $this->_wpdb->delete("aupair_registered_employee_prefferred_countries", array("wp_user_id" => get_current_user_id()));
         }
-        public function insert_preferred_country($country, $is_activated, $year_created){
+        public function insert_preferred_country($country){
             $this->_wpdb->insert(
                 'aupair_registered_employee_prefferred_countries',
                 array(
                     'wp_user_id'   => get_current_user_id(),
-                    'country'      => $country,
-                    'is_activated' => $is_activated,
-                    'year_created' => $year_created
+                    'country'      => $country
                 ));
         }
         public function update($employee){
@@ -146,7 +144,7 @@
                 'employee_living_in'                                      => $employee->employee_living_in
             );
             $where  = array("wp_user_id" => get_current_user_id());
-            return  $this->_wpdb->update("aupair_registered_employee", $data, $where);
+            $this->_wpdb->update("aupair_registered_employee", $data, $where);
         }
     }
 

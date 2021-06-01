@@ -351,7 +351,7 @@
                 $employee_container      .=       "</div>";
                 $employee_container      .=       "<div class='btn-container'>";
                 $employee_container      .=           "<a href='$employee_profile_link'>
-                                                        <button>View Profile</button>
+                                                        <button id='view-profile'>View Profile</button>
                                                      </a>";
                 $employee_container      .=       "</div>";
                 $employee_container      .=    "</div>";

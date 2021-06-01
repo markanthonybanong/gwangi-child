@@ -8,7 +8,6 @@ get_header();
     global $wpdb;
     require get_theme_file_path('inc/employee/find-employee/find-employee-db.php');
     require get_theme_file_path('inc/employee/find-employee/find-employee-utils.php');
-    require get_theme_file_path('inc/employee/find-employee/find-employee-query.php');
     require get_theme_file_path('assets/utilities/php/shared-utils.php');
     require get_theme_file_path('assets/utilities/php/variables.php');
     require get_theme_file_path('assets/utilities/php/pagination.php');
@@ -22,21 +21,29 @@ get_header();
 <div class="aupair-two-column-parent-container">
     <div class="aupair-two-column-container">
         <div class="column-one">
-            <div class="header-container center">
-                <h3 class="add-border-bottom"> 
-                    Find Au Pairs, Nannies, Granny Au Pairs, Caregiver For Elderly, Live In Help, Live In Tutor
-                    and become a Host Family.
+            <div class="header-container">
+                <h3 class="add-border-bottom">
+                    Find Au Pairs, Nannies, Granny Au Pairs, Caregiver For Elderly, Live In Help, Live In Tutor,
+                    Online Tutor and Virtual Childcare.
                 </h3>
             </div>
             <div class="employees-container">
                 <?php
                     $result = $pagination->get_data($utils->limit, $utils->page);
-                    echo $utils->display_employees($result->data);
+                    if(!empty($result->data)){
+                        echo $utils->display_employees($result->data);
+                    } else {
+                        echo "<h3>Cannot find employees with that search criteria.</h3>";
+                    }
+                    
                 ?>
             </div>
             <div class="pagination-container">
                 <?php
-                    echo $pagination->create_links('employee-page', 'find-employee');
+                    if(!empty($result->data)){
+                        echo $pagination->create_links('employee-page', 'find-employee');
+                    }
+                    
                 ?>
                     
             </div>
@@ -140,7 +147,7 @@ get_header();
                         <option value="Female" <?php echo $shared_utils->filter_selected_select_item('required-gender', 'Female');?>>Female</option>
                     </select>
                 </div>
-                <div class="required-age-container add-border-bottom">
+                <div class="required-age-container">
                     <h5>Required Age(Min-Max)</h5>
                      <div class="container">
                         <input type="number" name="required-age-min" value="<?php echo $shared_utils->filter_input_value('required-age-min');?>" placeholder="Min"/>

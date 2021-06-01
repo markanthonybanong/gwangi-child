@@ -1,0 +1,45 @@
+export function checkEmptyContactInformationFields(isThereEmptyFields){
+    //Firstname
+    if($.trim($('.firstname').val()) === ""){
+        isThereEmptyFields.push(true);
+        $('.firstname').addClass('required-border');
+        $('.warning-msg').append($('<p id=\"required\"></p>').text('Firstname cannot be left empty'));
+    }
+    //Lastname
+    if($.trim($('.lastname').val()) === ""){
+        isThereEmptyFields.push(true);
+        $('.lastname').addClass('required-border');
+        $('.warning-msg').append($('<p id=\"required\"></p>').text('Lastname cannot be left empty'));
+    }
+    //Address
+    if($.trim($('.address').val()) === ""){
+        isThereEmptyFields.push(true);
+        $('.address').addClass('required-border');
+        $('.warning-msg').append($('<p id=\"required\"></p>').text('Address cannot be left empty'));
+    }
+    //Zip code
+    if($.trim($('.zip-code').val()) === ""){
+        isThereEmptyFields.push(true);
+        $('.zip-code').addClass('required-border');
+        $('.warning-msg').append($('<p id=\"required\"></p>').text('Zip code cannot be left empty'));
+    }
+    //City
+    if($.trim($('.city').val()) === ""){
+        isThereEmptyFields.push(true);
+        $('.city').addClass('required-border');
+        $('.warning-msg').append($('<p id=\"required\"></p>').text('City cannot be left empty'));
+    }
+    //State region
+    if($.trim($('.state-region').val()) === ""){
+        isThereEmptyFields.push(true);
+        $('.state-region').addClass('required-border');
+        $('.warning-msg').append($('<p id=\"required\"></p>').text('State/Region cannot be left empty'));
+    }
+    //Mobile Phone No
+    if($('.mobile-number').val() === ""){
+            isThereEmptyFields.push(true);
+            $('.mobile-number').addClass('required-border');
+            $('.warning-msg').append($('<p id=\"required\"></p>').text('Mobile Phone Number cannot be left empty'));
+    }
+  
+}

@@ -31,19 +31,19 @@ get_header();
             <div class="warning-msg">
              <?php
                  if(isset($_POST['update'])){
+                    /**
+                     *WARNING: echo assumes that all update actions are successful! 
+                    */
                     $employee = $Update_Employee_Utils->set_employee_object($_POST, $Employee);
+                    $Update_Employee_Db->update($employee);
                     $Update_Employee_Db->delete_preferred_countries();
                      $i = 0;
                      while($i < count($employee->preferred_countries)){
                          $country      = $employee->preferred_countries[$i];
-                         $is_activated = $Update_Employee_Db->get_login_employee()->is_activated;
-                         $year_created = $Update_Employee_Db->get_login_employee()->year_created;
-                         $Update_Employee_Db->insert_preferred_country($country, $is_activated, $year_created);
+                         $Update_Employee_Db->insert_preferred_country($country);
                          $i++;
                      }
-                    if($Update_Employee_Db->update($employee)){
-                        echo "<p id='required'>Updated</p>";
-                    }
+                     echo "<p id='required'>Updated</p>";
                  }
              ?>
             </div>
@@ -79,11 +79,10 @@ get_header();
                             </div>
                         </div>
                         <div class="photo-description-container">
-                            <h5>Photo Description</h5>
+                            <h5>Photo Description(Max. <span id="max"></span> characters)</h5>
+                            <p>(Briefly explain your uploaded photo, when was it taken, where was it taken, who are you with when, it was taken, etc)</p>
                             <div class="center">
-                                <textarea name="photo-description" id="photo-description">
-                                    <?php echo $Update_Employee_Db->get_login_employee()->photo_description;?>
-                                </textarea>
+                                <textarea name="photo-description" id="photo-description" maxlength='163'><?php echo $Update_Employee_Db->get_login_employee()->photo_description;?></textarea>
                             </div>
                         </div>
                         <input type="button" value="Update" name="update-photo" id="upload-button">
@@ -965,9 +964,7 @@ get_header();
                                 </div>
                              </div>
                              <div class="field-container">
-                                <textarea id="field" name="describe-health-problems-or-allergies" rows="4" cols="50" class="describe-health-problems-or-allergies">
-                                    <?php echo $Update_Employee_Utils->inputted_describe_health_problems_or_allergies($_POST);?>
-                                </textarea>
+                                <textarea id="field" name="describe-health-problems-or-allergies" rows="4" cols="50" class="describe-health-problems-or-allergies"><?php echo $Update_Employee_Utils->inputted_describe_health_problems_or_allergies($_POST);?></textarea>
                              </div>
                           </div>
                        </div>
@@ -1216,9 +1213,7 @@ get_header();
                         <h3 class="add-border-bottom">Letter to the Family</h3>
                         <h5>Letter<span id="required">*</span></h5>
                         <div class="center">
-                           <textarea id="text-area" name="letter-to-the-family" class="letter-to-the-family">
-                           <?php echo $Update_Employee_Db->get_login_employee()->letter;?>
-                           </textarea>
+                           <textarea id="text-area" name="letter-to-the-family" class="letter-to-the-family"><?php echo $Update_Employee_Db->get_login_employee()->letter;?></textarea>
                         </div>
                     </div>
                 </div>

@@ -1934,6 +1934,10 @@ header .menu .down {
   color: red;
 }
 
+#view-profile:hover {
+  opacity: 0.7;
+}
+
 #text-area {
   margin-bottom: 5px;
 }
@@ -1949,7 +1953,6 @@ header .menu .down {
   margin-bottom: 8px;
 }
 
-border
 .required-border {
   border: 3px solid red !important;
   padding: 8px 8px 1px 8px;

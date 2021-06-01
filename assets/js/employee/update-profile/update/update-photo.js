@@ -34,7 +34,6 @@ export default $(function(){
     }
 
     uploadBtn.click( function (){
-        console.log('CLICK');
         uploadBtn.attr('disabled', true);
         const photo = $('.upload-photo-container #employee-photo').prop('files')[0];
         //if there is an image already and just want to update photo privacry or description

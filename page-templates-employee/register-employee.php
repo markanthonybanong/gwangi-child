@@ -23,28 +23,31 @@ get_header();
       <div class="active-aupair-container register-employee-container">
          <form id="form" method="post" action="">
             <div class="warning-msg">
-               <pre>
                <?php
                   if(isset($_POST['insert'])){
                      $result = $common_utils->insert_into_wp_users($_POST['email'], $_POST['password']);
+                     //when error it returns an object, if not result is ID
                      if(is_object($result) === false){
                         $employee->wp_user_id = $result;
                         $employee_data        = $utils->set_employee_object($_POST, $employee);
-                        $db->insert($employee_data);
-                        $i = 0;
-                        while($i < count($employee_data->preferred_countries) ){
-                           $country = $employee_data->preferred_countries[$i];
-                           $db->insert_preferred_country($result, $country);
-                           $i++;
+                        $insert_employee      = $db->insert($employee_data);
+                        if($insert_employee){
+                           $i = 0;
+                           while($i < count($employee_data->preferred_countries) ){
+                              $country = $employee_data->preferred_countries[$i];
+                              $db->insert_preferred_country($result, $country);
+                              $i++;
+                           }
+                           echo "<p id='required'>We have sent a verification link to your email address. Please check your inbox or spam.</p>";
+                        } else {
+                           echo "<p id='required'>Something went wrong.</p>";
                         }
-                        echo "<p id='required'>We have sent a verification link to your email address. Please check your inbox or spam.</p>";
                      } else {
                         $error = $result->get_error_message();
                         echo "<p id='required'>$error</p>";
                      }
                   }
                ?>
-               </pre>
             </div>
             <pre>
                <?php
@@ -911,9 +914,7 @@ get_header();
                         </div>
                      </div>
                      <div class="field-container">
-                        <textarea id="field" name="describe-health-problems-or-allergies" rows="4" cols="50" class="describe-health-problems-or-allergies">
-                           <?php echo $utils->inputted_describe_health_problems_or_allergies($_POST);?>
-                        </textarea>
+                        <textarea id="field" name="describe-health-problems-or-allergies" rows="4" cols="50" class="describe-health-problems-or-allergies"><?php echo $utils->inputted_describe_health_problems_or_allergies($_POST);?></textarea>
                      </div>
                   </div>
                </div>
@@ -1161,9 +1162,7 @@ get_header();
                 <h3 class="add-border-bottom">Letter to the Family</h3>
                 <h5>Letter<span id="required">*</span></h5>
                 <div class="center">
-                   <textarea id="text-area" name="letter-to-the-family" class="letter-to-the-family">
-                     <?php echo $utils->inputted_letter_to_the_family($_POST);?>
-                   </textarea>
+                   <textarea id="text-area" name="letter-to-the-family" class="letter-to-the-family"><?php echo $utils->inputted_letter_to_the_family($_POST);?></textarea>
                 </div>
             </div>
             <h3 class="add-border-bottom">Account Information</h3>

@@ -3,7 +3,7 @@
         public function __construct(){
            
         }
-        #filter - used in find employe, etc.
+        #filter - used in find employe, find host family etc.
         public function filter_selected_array_cb($arr_check_box, $item){
             $checked  = null;
             if(isset($_POST[$arr_check_box]) && in_array($item, $_POST[$arr_check_box])){

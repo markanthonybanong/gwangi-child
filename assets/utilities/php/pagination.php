@@ -24,7 +24,10 @@
             $result->data  = $this->_wpdb->get_results( $query );
             return $result;
         }
-
+        //**
+        //$page_name     - name of the page on which to use the "$_GET[]",
+        //$template_name - name of the template
+        //*/
         public function create_links($page_name, $template_name){
             $links      = 3; //number of links to display below and above the current page
             $last       = ceil( $this->_total / $this->_limit );

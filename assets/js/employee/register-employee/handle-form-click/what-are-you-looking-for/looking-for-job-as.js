@@ -79,7 +79,6 @@ export default $(function(){
     }
     
     aupairCB.change(function(){
-        console.log('CLICK AUPAIR');
         alterCheckBox(this);
         if(this.checked){
             aupairNannyGrannyAupairContainer.css('display', 'block');
@@ -125,7 +124,6 @@ export default $(function(){
     });
 
     liveInTutorCB.change(function(){
-        console.log('CLICK LIVE IN TUTOR');
         alterCheckBox(this);
         setDynamicLabel('Live in Tutor', this.checked);
         if(this.checked){

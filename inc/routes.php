@@ -1,7 +1,8 @@
 <?php
-     function get_login_user_data(){
+     function get_login_user_data($request){
         global $wpdb;
-        $result = $wpdb->get_results("SELECT * FROM aupair_registered_employee WHERE wp_user_id = '".get_current_user_id()."'");
+        $tableName = $request['tableName'];
+        $result = $wpdb->get_results("SELECT * FROM $tableName WHERE wp_user_id = '".get_current_user_id()."'");
         if( is_wp_error($result) ) {
             wp_send_json_error($result->get_error_message());
         } else {
