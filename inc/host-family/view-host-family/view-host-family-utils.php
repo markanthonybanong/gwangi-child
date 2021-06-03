@@ -226,7 +226,6 @@
             }
             return $languages;
         }
-        
         public function preferred_area(){
             $areas = array();
             if($this->_employee->preferred_area_all === "1"){
@@ -364,7 +363,42 @@
             }
             return $mark_up;
         }
-
+        public function display_contact_information(){
+            $mark_up = '<div class="contact-information-parent-container">
+                            <h3 class="add-border-bottom">Contact Information(private)</h3>
+                            <div class="contact-information-container">
+                                <div class="fullname-container opacity-background">
+                                    <h5>Fullname</h5>
+                                    <p>'.$this->_host_family->firstname.' '.$this->_host_family->lastname.'</p>
+                                </div>       
+                                <div class="address-container">
+                                    <h5>Address</h5>
+                                    <p>'.$this->_host_family->address.'</p>
+                                </div> 
+                                <div class="zipcode-container opacity-background">
+                                    <h5>Zip code</h5>
+                                    <p>'.$this->_host_family->zipcode.'</p>
+                                </div>  
+                                <div class="city-container">
+                                   <h5>City</h5>
+                                   <p>'.$this->_host_family->city.'</p>
+                                </div>
+                                <div class="state-region-container opacity-background">
+                                    <h5>State/Region</h5>
+                                    <p>'.$this->_host_family->state_region.'</p>
+                                </div>
+                                <div class="country-container">
+                                   <h5>Country</h5>
+                                   <p>'.$this->_host_family->country.'</p>
+                                </div>
+                                <div class="mobile-phone-container opacity-background">
+                                  <h5>Mobile Phone No.</h5>
+                                  <p>'.$this->_host_family->mobile_phone_no.'</p>
+                                </div>
+                            </div>     
+                        </div>';
+            return ($this->_host_family->wp_user_id == get_current_user_id()) ? $mark_up : null;
+        }
     }
 
 ?>

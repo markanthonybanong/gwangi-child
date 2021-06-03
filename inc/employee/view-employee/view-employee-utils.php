@@ -411,6 +411,42 @@
             }
             return $mark_up;
         }
+        public function display_contact_information(){
+             $mark_up = '<div class="contact-information-parent-container">
+                            <h3 class="add-border-bottom">Contact Information(private)</h3>
+                            <div class="contact-information-container">
+                                <div class="fullname-container opacity-background">
+                                    <h5>Fullname</h5>
+                                    <p>'.$this->_employee->firstname.''.$this->_employee->lastname.'</p>
+                                </div>       
+                                <div class="address-container">
+                                    <h5>Address</h5>
+                                    <p>'.$this->_employee->address.'</p>
+                                </div> 
+                                <div class="zipcode-container opacity-background">
+                                    <h5>Zip code</h5>
+                                   <p>'.$this->_employee->zipcode.'</p>
+                                </div>  
+                                <div class="city-container">
+                                   <h5>City</h5>
+                                   <p>'.$this->_employee->city.'</p>
+                                </div>
+                                <div class="state-region-container opacity-background">
+                                    <h5>State/Region</h5>
+                                    <p>'.$this->_employee->state_region.'</p>
+                                </div>
+                                <div class="country-container">
+                                   <h5>Country</h5>
+                                   <p>'.$this->_employee->country.'</p>
+                                </div>
+                                <div class="mobile-phone-container opacity-background">
+                                  <h5>Mobile Phone No.</h5>
+                                  <p>'.$this->_employee->mobile_phone_no.'</p>
+                                </div>
+                            </div>     
+                        </div>';
+            return ($this->_employee->wp_user_id == get_current_user_id()) ? $mark_up : null;
+        }
 
     }
 

@@ -1043,7 +1043,7 @@ get_header();
               </div>
             </div>
             <div class="e-r-firstname">
-               <h3 class="add-border-bottom">Contact Information</h3>
+               <h3 class="add-border-bottom">Contact Information(private)</h3>
                <div class="center">
                   <div class="registration-input">
                      <div class="label-container">
