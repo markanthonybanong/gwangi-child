@@ -7,10 +7,9 @@
         this.classList.toggle('active');
       });
       if($(window).width() >= 992){
-       
-        $('li').hover( function(){
+        $('li').click( function(){
           const subMenu = $(this).children('.sub-menu');
-          $(subMenu).toggle();
+          $(subMenu).slideToggle();
         });
       }
     }); // end DOM ready

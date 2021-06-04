@@ -1648,7 +1648,6 @@ header {
 }
 
 header .header-container {
-  width: 100% !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1745,7 +1744,7 @@ header .menu li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem;
+  padding: 12px;
 }
 
 header .menu .arrow {
@@ -1767,6 +1766,7 @@ header .menu #envelope-icon {
 
 .header-banner-container {
   background: #334b7b;
+  width: 100%;
   height: 145px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1783,8 +1783,21 @@ header .menu #envelope-icon {
 }
 
 @media (min-width: 992px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .header-container {
     height: 78px;
+    width: 68%;
     -webkit-box-orient: horizontal !important;
     -webkit-box-direction: normal !important;
         -ms-flex-direction: row !important;
@@ -1803,7 +1816,6 @@ header .menu #envelope-icon {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-left: 35px;
   }
   .header-container .menu-container {
     width: 60%;
@@ -1816,7 +1828,6 @@ header .menu #envelope-icon {
     display: none !important;
   }
   .header-container .user-menu-container {
-    margin-right: 35px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1849,7 +1860,13 @@ header .menu #envelope-icon {
     margin-top: 0 !important;
   }
   .header-container .menu > li > a {
-    padding-right: 45px;
+    padding: 0;
+  }
+  .header-container .menu > li {
+    padding-right: 60px;
+  }
+  .header-container .menu > li:last-child {
+    padding-right: 0px;
   }
   .header-container .menu li a:hover {
     color: #245CC5;
@@ -1865,19 +1882,12 @@ header .menu #envelope-icon {
   .header-container .menu .sub-menu {
     display: none;
     position: absolute;
-    top: 65px;
-    width: 200px;
-    border: 1px solid black;
-    z-index: 10;
-  }
-  .header-container .menu .sub-menu li {
+    top: 80px;
+    right: 253px;
+    width: 170px;
     background: #ffffff !important;
-  }
-  .header-container #user-menu .sub-menu {
-    position: absolute !important;
-    top: 65px;
-    right: 20px;
-    width: 200px;
+    border-radius: 10px !important;
+    z-index: 10;
   }
   .header-banner-container {
     height: 300px;

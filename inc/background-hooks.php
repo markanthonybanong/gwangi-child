@@ -46,13 +46,14 @@ add_filter('wp_authenticate_user', 'custom_authenticate_user',11,1);
  */
 function display_user_menu($items, $args){
     $employee_url_data    = add_query_arg('employee-id', get_current_user_id(), site_url('/view-employee-profile'));
-    $employee             = '<li>
+    $employee             = '<li id="envelope">
                                 <a href="'.site_url('/message-employee').'">
                                     <span id="envelope-icon">
                                         <i class="far fa-envelope"></i>
                                     </span>
                                 </a>
                             </li>
+                            <li><a>Membership</a></li>
                             <li>
                                 <a>Profile<span class="arrow down"></span></a>
                                 <ul class="sub-menu">
