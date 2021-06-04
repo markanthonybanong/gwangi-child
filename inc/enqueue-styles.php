@@ -13,6 +13,7 @@
     function child_theme_configurator_css() {
         //for development only remove, date and random
         wp_enqueue_style( 'chld_thm_cfg_separate', trailingslashit( get_stylesheet_directory_uri() ) . '/style.css', array( 'gwangi-style','gwangi-style' ), date("h:i:s") );
+        wp_enqueue_style( 'font-awesome-5', 'https://use.fontawesome.com/releases/v5.3.0/css/all.css', array(), '5.3.0');
         if(is_page_template('page-templates-account-verification/account-verification.php')) {
             wp_enqueue_style( 'account-verification', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/account-verification/account-verification.css', false, rand(111,9999));
         }else if(is_page_template('page-templates-employee/register-employee.php')) {

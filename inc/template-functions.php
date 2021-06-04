@@ -74,27 +74,25 @@ if ( ! function_exists( 'gwangi_header_logged_in' ) ) :
 						<a id="nav-toggle" href="#"><span></span></a>
 					</div>
 					 <?php
-					       //add if later
 					        wp_nav_menu( array(
 								'theme_location' => 'aupair-login-user-menu',
 								'menu'           => 'UserMenu',
 								'menu_id'        => 'user-menu-mobile',
 								'container'      => false,
 							) );
-					        //center menu
-							if ( has_nav_menu( 'primary' ) ) {
-								wp_nav_menu( array(
-									'theme_location' => 'primary',
-									'menu_id'        => 'primary-menu',
-									'container'      => false,
-								) );
-							}
+					        // //center menu
+							// if ( has_nav_menu( 'primary' ) ) {
+							// 	wp_nav_menu( array(
+							// 		'theme_location' => 'primary',
+							// 		'menu_id'        => 'primary-menu',
+							// 		'container'      => false,
+							// 	) );
+							// }
 						?>
 				</div>
 				
 				<div class="user-menu-container">
 					<?php 
-					#use add_query_arg here, to create link for view profile
 					    //right menu
 						wp_nav_menu( array(
 							'theme_location' => 'aupair-login-user-menu',

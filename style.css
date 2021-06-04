@@ -59,7 +59,8 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
  * Galleries.....................Gallery and gallery-item components.
  * Infinite scroll...............Infinite scroll styles.
  * Hero..........................Hero component styles.
- * Media.........................Bootstrap Media component styles.
+ * Media.........................
+  Media component styles.
  * Menus.........................Menu and content navigation styles.
  * Navigation....................Main navigation component.
  * Pagination....................Post navigation, Pager & Pagination.
@@ -1760,6 +1761,10 @@ header .menu .down {
   -webkit-transform: rotate(45deg);
 }
 
+header .menu #envelope-icon {
+  font-size: 22px;
+}
+
 .header-banner-container {
   background: #334b7b;
   height: 145px;
@@ -1848,6 +1853,14 @@ header .menu .down {
   }
   .header-container .menu li a:hover {
     color: #245CC5;
+    cursor: pointer;
+  }
+  .header-container .menu li a:hover .arrow {
+    border: solid #245CC5;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 5px;
   }
   .header-container .menu .sub-menu {
     display: none;
