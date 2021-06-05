@@ -53,7 +53,7 @@ function display_user_menu($items, $args){
                                     </span>
                                 </a>
                             </li>
-                            <li><a>Membership</a></li>
+                            <li><a href="'.site_url('/membership-employee').'">Membership</a></li>
                             <li>
                                 <a>Profile<span class="arrow down"></span></a>
                                 <ul class="sub-menu">

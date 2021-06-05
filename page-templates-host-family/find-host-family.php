@@ -21,7 +21,7 @@ get_header();
 <div class="aupair-two-column-parent-container">
     <div class="aupair-two-column-container">
         <div class="column-one">
-            <div class="header-container">
+            <div>
                 <h3 class="add-border-bottom"> 
                     Find Host Family from abroad contact them today for free.
                 </h3>

@@ -1,0 +1,84 @@
+@import "../../../utilities/sass/variables";
+.membership-parent-container{
+    .membership-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        .silver-container,
+        .gold-container,
+        .bronze-container{
+            width: 100%;
+            max-width: 375px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .img-container{
+               width: 100%;
+               max-width: 250px;
+               margin-top: 50px;
+               padding: 10px;
+               box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+               img{
+                   width: inherit;
+                   height: 250px;
+                   border-radius: 15px;
+               }
+            }
+            #three-months{
+                margin-top: 50px;
+            }
+            #price,
+            #pay-btn{
+                margin-top: 20px;
+            }
+            #pay-btn{
+                margin-bottom: 20px;
+                background: $primary-color;
+                color: white;
+            }
+            #pay-btn:hover{
+                opacity: 0.7;
+            }
+        }
+        .silver-container{
+            margin-top: 20px;
+        }
+        .gold-container,
+        .bronze-container{
+            margin-top: 35px;
+        }
+    }
+    .membership-info{
+        margin-top: 35px;
+        #check:before{
+            content: '✓ ';
+            color: $primary-color;
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+    
+    .silver-container,
+    .gold-container,
+    .bronze-container{
+        max-width: 80% !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .membership-parent-container{
+        .membership-container{
+            flex-direction: row;
+            .silver-container,
+            .gold-container,
+            .bronze-container{
+                margin-top: 35px;
+                max-width: 375px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+@charset "UTF-8";
+.membership-parent-container .membership-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.membership-parent-container .membership-container .silver-container,
+.membership-parent-container .membership-container .gold-container,
+.membership-parent-container .membership-container .bronze-container {
+  width: 100%;
+  max-width: 375px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.membership-parent-container .membership-container .silver-container .img-container,
+.membership-parent-container .membership-container .gold-container .img-container,
+.membership-parent-container .membership-container .bronze-container .img-container {
+  width: 100%;
+  max-width: 250px;
+  margin-top: 50px;
+  padding: 10px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.membership-parent-container .membership-container .silver-container .img-container img,
+.membership-parent-container .membership-container .gold-container .img-container img,
+.membership-parent-container .membership-container .bronze-container .img-container img {
+  width: inherit;
+  height: 250px;
+  border-radius: 15px;
+}
+
+.membership-parent-container .membership-container .silver-container #three-months,
+.membership-parent-container .membership-container .gold-container #three-months,
+.membership-parent-container .membership-container .bronze-container #three-months {
+  margin-top: 50px;
+}
+
+.membership-parent-container .membership-container .silver-container #price,
+.membership-parent-container .membership-container .silver-container #pay-btn,
+.membership-parent-container .membership-container .gold-container #price,
+.membership-parent-container .membership-container .gold-container #pay-btn,
+.membership-parent-container .membership-container .bronze-container #price,
+.membership-parent-container .membership-container .bronze-container #pay-btn {
+  margin-top: 20px;
+}
+
+.membership-parent-container .membership-container .silver-container #pay-btn,
+.membership-parent-container .membership-container .gold-container #pay-btn,
+.membership-parent-container .membership-container .bronze-container #pay-btn {
+  margin-bottom: 20px;
+  background: #245CC5;
+  color: white;
+}
+
+.membership-parent-container .membership-container .silver-container #pay-btn:hover,
+.membership-parent-container .membership-container .gold-container #pay-btn:hover,
+.membership-parent-container .membership-container .bronze-container #pay-btn:hover {
+  opacity: 0.7;
+}
+
+.membership-parent-container .membership-container .silver-container {
+  margin-top: 20px;
+}
+
+.membership-parent-container .membership-container .gold-container,
+.membership-parent-container .membership-container .bronze-container {
+  margin-top: 35px;
+}
+
+.membership-parent-container .membership-info {
+  margin-top: 35px;
+}
+
+.membership-parent-container .membership-info #check:before {
+  content: '✓ ';
+  color: #245CC5;
+}
+
+@media (min-width: 768px) {
+  .silver-container,
+  .gold-container,
+  .bronze-container {
+    max-width: 80% !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .membership-parent-container .membership-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .membership-parent-container .membership-container .silver-container,
+  .membership-parent-container .membership-container .gold-container,
+  .membership-parent-container .membership-container .bronze-container {
+    margin-top: 35px;
+    max-width: 375px !important;
+  }
+}
+/*# sourceMappingURL=membership-employee.css.map */

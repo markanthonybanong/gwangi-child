@@ -24,6 +24,8 @@
             wp_enqueue_style( 'view-employee-profile', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/employee/view-employee-profile/view-employee-profile.css', false, rand(111,9999));  
         } elseif(is_page_template('page-templates-employee/find-employee.php')) {
             wp_enqueue_style( 'find-employee', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/employee/find-employee/find-employee.css', false, rand(111,9999));  
+        } elseif(is_page_template('page-templates-employee/membership-employee.php')) {
+            wp_enqueue_style( 'membership-employee', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/employee/membership-employee/membership-employee.css', false, rand(111,9999));  
         } elseif(is_page_template('page-templates-host-family/register-host-family.php')) {
             wp_enqueue_style( 'register-host-family', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/host-family/register-host-family/register-host-family.css', false, rand(111,9999));
         } elseif(is_page_template('page-templates-host-family/update-host-family-profile.php')) {

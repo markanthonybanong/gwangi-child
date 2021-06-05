@@ -21,7 +21,7 @@ get_header();
 <div class="aupair-two-column-parent-container">
     <div class="aupair-two-column-container">
         <div class="column-one">
-            <div class="header-container">
+            <div>
                 <h3 class="add-border-bottom">
                     Find Au Pairs, Nannies, Granny Au Pairs, Caregiver For Elderly, Live In Help, Live In Tutor,
                     Online Tutor and Virtual Childcare.

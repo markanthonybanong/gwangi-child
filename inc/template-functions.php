@@ -27,13 +27,13 @@ if ( ! function_exists( 'gwangi_header_not_logged_in' ) ) :
 						<a id="nav-toggle" href="#"><span></span></a>
 					</div>
 					 <?php
-							if ( has_nav_menu( 'primary' ) ) {
-								wp_nav_menu( array(
-									'theme_location' => 'primary',
-									'menu_id'        => 'primary-menu',
-									'container'      => false,
-								) );
-							}
+							// if ( has_nav_menu( 'primary' ) ) {
+							// 	wp_nav_menu( array(
+							// 		'theme_location' => 'primary',
+							// 		'menu_id'        => 'primary-menu',
+							// 		'container'      => false,
+							// 	) );
+							// }
 						?>
 				</div>
 				<div class="user-menu-container">

@@ -66,7 +66,8 @@
 }
 
 .upload-photo-container .column-two p:before {
-  content: '✓';
+  content: '✓ ';
+  color: #245CC5;
 }
 
 @media (min-width: 992px) {
