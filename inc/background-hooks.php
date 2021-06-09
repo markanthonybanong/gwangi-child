@@ -55,19 +55,29 @@ function display_user_menu($items, $args){
                             </li>
                             <li><a href="'.site_url('/membership-employee').'">Membership</a></li>
                             <li>
-                                <a>Profile<span class="arrow down"></span></a>
+                                <a>Profile<span class="arrow up"></span></a>
                                 <ul class="sub-menu">
                                     <li><a href="'.site_url('/update-employee-profile').'">Update Profile</a></li>
                                     <li><a href="'.$employee_url_data.'">View Profile</a></li>
+                                    <li><a href="'.site_url('/message-employee').'">Message</a></li>
                                     <li><a href="'.site_url('/wp-login.php?action=logout"').'">Log Out?</a></li>
                                 </ul>
                             </li>';
     $host_family_url_data = add_query_arg('host-family-id', get_current_user_id(), site_url('/view-host-family-profile'));
-    $host_family          = '<li>
-                                <a>Profile<span class="arrow down"></span></a>
+    $host_family          = '<li id="envelope">
+                                <a href="'.site_url('/message-employee').'">
+                                    <span id="envelope-icon">
+                                        <i class="far fa-envelope"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li><a href="'.site_url('/membership-host-family').'">Membership</a></li>
+                            <li>
+                                <a>Profile<span class="arrow up"></span></a>
                                 <ul class="sub-menu">
                                     <li><a href="'.site_url('/update-host-family-profile').'">Update Profile</a></li>
                                     <li><a href="'.$host_family_url_data.'">View Profile</a></li>
+                                    <li><a href="'.site_url('/message-host-family').'">Message</a></li>
                                     <li><a href="'.site_url('/wp-login.php?action=logout"').'">Log Out?</a></li>
                                 </ul>
                             </li>';

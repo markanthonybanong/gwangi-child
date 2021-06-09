@@ -2,15 +2,18 @@
     class View_Employee_Utils{
         private $_employee                     = null; 
         private $_employee_preferred_countries = null;
-        private $_string_utils                  = null;
+        private $_string_utils                 = null;
+        private $_db                           = null;
         public function __construct(
             $employee,
             $employee_preferred_countries,
-            $string_utils
+            $string_utils,
+            $db
         ){
-                $this->_employee                     = $employee;
-                $this->_employee_preferred_countries = $employee_preferred_countries;
-                $this->_string_utils                 = $string_utils;
+            $this->_employee                     = $employee;
+            $this->_employee_preferred_countries = $employee_preferred_countries;
+            $this->_string_utils                 = $string_utils;
+            $this->_db                           = $db;
         }
         private function selected_take_care_of_children_from_age(){
             $ages = array();
@@ -447,7 +450,6 @@
                         </div>';
             return ($this->_employee->wp_user_id == get_current_user_id()) ? $mark_up : null;
         }
-
     }
 
 ?>

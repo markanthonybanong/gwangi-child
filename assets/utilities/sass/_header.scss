@@ -74,7 +74,7 @@ header{
           display: flex;
           align-items: center;
           // padding: 1rem;
-          padding: 12px;
+          padding: 8px;
         }
       }
       .arrow {
@@ -87,6 +87,10 @@ header{
       .down {
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
+      }
+      .up {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
       }
       #envelope-icon{
         font-size: 22px;
@@ -178,13 +182,10 @@ header{
         display: none;
         position: absolute;
         top: 80px;
-        right: 253px;
-        width: 170px;
+        width: 150px;
         background: #ffffff !important;
-       
         border-radius: 10px !important;
         z-index: 10;
-       
       }
     }
   }

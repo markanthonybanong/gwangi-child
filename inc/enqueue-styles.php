@@ -34,6 +34,10 @@
             wp_enqueue_style( 'view-host-family-profile', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/host-family/view-host-family/view-host-family-profile.css', false, rand(111,9999));
         } elseif(is_page_template('page-templates-host-family/find-host-family.php')) {
             wp_enqueue_style( 'find-host-family', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/host-family/find-host-family/find-host-family.css', false, rand(111,9999));
+        } elseif(is_page_template('page-templates-host-family/membership-host-family.php')) {
+            wp_enqueue_style( 'membership-host-family', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/host-family/membership-host-family/membership-host-family.css', false, rand(111,9999));
+        } elseif(is_page_template('page-templates-host-family/message-host-family.php')) {
+            wp_enqueue_style( 'message-host-family', trailingslashit( get_stylesheet_directory_uri() ) .  '/assets/css/host-family/message-host-family/message-host-family.css', false, rand(111,9999));
         }
     }
     add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 999 );

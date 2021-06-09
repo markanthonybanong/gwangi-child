@@ -1,0 +1,17 @@
+@import "../../../utilities/sass/variables";
+.message-container{
+    .title{
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+    }
+    .compose{
+        border-top: 4px solid black;
+        border-left: 4px solid black;
+        border-right: 4px solid black;
+    }
+    .inbox{
+        border: 4px solid black;
+    }
+
+}
