@@ -48,48 +48,7 @@
         die();
     }
 
-    function get_block_user($request){
-        global $wpdb;
-        $wp_user_one = $request['wpUserIdOne'];
-        $query  = "SELECT * FROM aupair_block_message_from WHERE user_wp_user_id = '".get_current_user_id()."' AND block_msg_from_wp_user_id ='".$wp_user_one."'";
-        $result =  $wpdb->get_results($query);
-        if($result){
-            wp_send_json_success($result);
-        } else {
-            wp_send_json_error($wpdb->last_query);
-        }
-        die();
-    }
-
-    function delete_block_user($request){
-        global $wpdb;
-        $data = array(
-            'user_wp_user_id'           => get_current_user_id(),
-            'block_msg_from_wp_user_id' => $request['wpUserIdOne']
-         );
-        $result = $wpdb->delete('aupair_block_message_from', $data);
-        if($result){
-            wp_send_json_success($result);
-        } else {
-            wp_send_json_error($wpdb->last_query);
-        }
-        die();
-    }
     
-    function block_user($request){
-        global $wpdb;
-        $data = array(
-            'user_wp_user_id'           => get_current_user_id(),
-            'block_msg_from_wp_user_id' => $request['wpUserIdOne']
-         );
-         $result = $wpdb->insert('aupair_block_message_from', $data);
-         if($result){
-            wp_send_json_success($result);
-        } else {
-            wp_send_json_error($wpdb->last_query);
-        }
-         die();
-    }
     
     add_action('rest_api_init', function(){
         register_rest_route( 'activeAupair/v1', '/uploadEmployeePhoto', [
@@ -104,18 +63,7 @@
             'methods'  => 'GET',
             'callback' => 'get_directory'
         ]);
-        register_rest_route( 'activeAupair/v1', '/getBlockUser', [
-            'methods'  => 'GET',
-            'callback' => 'get_block_user'
-        ]);
-        register_rest_route( 'activeAupair/v1', '/deleteBlockUser', [
-            'methods'  => 'POST',
-            'callback' => 'delete_block_user'
-        ]);
-        register_rest_route( 'activeAupair/v1', '/blockUser', [
-            'methods'  => 'POST',
-            'callback' => 'block_user'
-        ]);
+ 
     });
 
 ?>

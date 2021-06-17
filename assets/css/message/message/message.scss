@@ -1,0 +1,92 @@
+@import "../../../utilities/sass/variables";
+.message-container{
+    .send-to{
+        display: flex;
+        justify-content: space-between;
+        .first-column{
+            display: flex;
+            align-items: center;
+            .photo-container{
+                height: 55px;
+                width: 55px;
+                #user-photo{
+                    border-radius: 15px;
+                    height: 55px;
+                    width: 55px;
+                }
+                margin-right: 30px;
+            }
+          
+        }
+        .second-column{
+            display: flex;
+            align-items: center;
+            #arrow-left-icon{
+                font-size: 20px;
+                font-weight: bolder;
+                a{
+                    color: black;
+                }
+            }
+            #arrow-left-icon:hover{
+                cursor: pointer;
+                a{
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+    .chat-area{
+        height: 400px;
+        max-height: 400px;
+        margin-top: 15px;
+        padding: 15px;
+        border: 3px solid $primary-color;
+        overflow: scroll;
+        .msg-parent-container{
+            margin-bottom: 5px;
+            .msg-container{
+                width: 65%;
+                padding: 10px;
+                #created-at{
+                    font-size: 12px;
+                    float: right;
+                }
+            }
+        }
+        .sender{
+            display: flex;
+            justify-content: flex-end;
+            .msg-container{
+                background: $primary-color;
+                color: white;
+                border-radius: 15px 15px 0 15px;
+            }
+        }
+        .receiver{
+            display: flex;
+            justify-content: flex-start;
+            .msg-container{
+                background: #f5f5f5;
+                border-radius: 15px 15px 15px 15px;
+            }
+        }
+      
+       
+    }
+    .input-area{
+        display: flex;
+        margin-top: 15px;
+        #message-field{
+            width: 100%;
+        }
+        #send-btn{
+            margin-left: 15px;
+            background-color: $primary-color;
+            color: white;
+        }
+        #send-btn:hover{
+            opacity: 0.7;
+        }
+    }
+}

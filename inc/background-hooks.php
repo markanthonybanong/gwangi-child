@@ -59,7 +59,7 @@ function display_user_menu($items, $args){
                                 <ul class="sub-menu">
                                     <li><a href="'.site_url('/update-employee-profile').'">Update Profile</a></li>
                                     <li><a href="'.$employee_url_data.'">View Profile</a></li>
-                                    <li><a href="'.site_url('/message-employee').'">Message</a></li>
+                                    <li><a href="'.site_url('/messages').'">Messages</a></li>
                                     <li><a href="'.site_url('/wp-login.php?action=logout"').'">Log Out?</a></li>
                                 </ul>
                             </li>';
@@ -77,7 +77,7 @@ function display_user_menu($items, $args){
                                 <ul class="sub-menu">
                                     <li><a href="'.site_url('/update-host-family-profile').'">Update Profile</a></li>
                                     <li><a href="'.$host_family_url_data.'">View Profile</a></li>
-                                    <li><a href="'.site_url('/message-host-family').'">Message</a></li>
+                                    <li><a href="'.site_url('/messages').'">Messages</a></li>
                                     <li><a href="'.site_url('/wp-login.php?action=logout"').'">Log Out?</a></li>
                                 </ul>
                             </li>';

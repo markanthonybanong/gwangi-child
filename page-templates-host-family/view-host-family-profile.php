@@ -30,18 +30,35 @@ get_header();
     <div class="active-aupair-container">
         <div class="host-family-account-container">
             <div class="column-one">
-                <?php
-                    $photo  = $host_family_data->photo;
-                    if( $photo != ""){
-                        $img_src   = get_stylesheet_directory_uri().'/users-photo/host-family/'.$photo;
-                        $img_class = ($host_family_data->photo_privacy === 'Registered Members' && $host_family_data->wp_user_id != get_current_user_id()) ? "blurred" : null;
-                        echo "<div class='host-family-photo-container'><img src='$img_src' alt='host-family-photo-photo' class='$img_class'></div>";
-                    } else {
-                        $img_src = get_stylesheet_directory_uri().'/users-photo/avatars/user-avatar-thumb-square.png';
-                        echo "<div class='host-family-photo-container'><img src='$img_src' alt='host-family-photo-photo'></div>";
-                    }
-                    echo '<h5 id="photo-description"> '.$host_family_data->photo_description.' </h5>';
-                ?>                       
+                <div class="container">
+                    <?php
+                        $photo  = $host_family_data->photo;
+                        if( $photo != ""){
+                            $img_src   = get_stylesheet_directory_uri().'/users-photo/host-family/'.$photo;
+                            $img_class = ($host_family_data->photo_privacy === 'Registered Members' && $host_family_data->wp_user_id != get_current_user_id()) ? "blurred" : null;
+                            echo "<div class='host-family-photo-container'><img src='$img_src' alt='host-family-photo-photo' class='$img_class'></div>";
+                        } else {
+                            $img_src = get_stylesheet_directory_uri().'/users-photo/avatars/user-avatar-thumb-square.png';
+                            echo "<div class='host-family-photo-container'><img src='$img_src' alt='host-family-photo-photo'></div>";
+                        }
+                        echo '<h5 id="photo-description"> '.$host_family_data->photo_description.' </h5>';
+                    ?>                       
+                </div>
+                <div class="membership-container">
+                    <?php
+                            //Success returns the membership level object. Failure returns false
+                            $membership_level = pmpro_getMembershipLevelForUser($_GET['host-family-id']);
+                            if($membership_level){
+                                $membsership_info = "$membership_level->name Member($membership_level->description)";
+                                if($_GET['host-family-id'] == get_current_user_id()){
+                                    $membsership_info .= ' Expires '.date_i18n(get_option('date_format'), $membership_level->enddate);
+                                }
+                                echo "<h5>$membsership_info</h5>";
+                            } else {
+                                echo "<h5>Free Member</h5>";
+                            }
+                    ?>
+                </div>
             </div>
             <div class="column-two">
                 <?php
@@ -61,7 +78,33 @@ get_header();
                     $host_family_info .= " Can speak $languages_spoken_at_home.";
                     echo "<h3>$looking_for jobs in $host_family_data->country</h3>";
                     echo $host_family_info;
-                      
+                    if(get_user_meta(get_current_user_id(), 'user_type', true) === 'employee'){
+                        $contact_mark_up = '<form method="post" action="">
+                                                <div class="action-container">
+                                                    <input type="submit" id="block-unblock" name="block-unblock" value="">
+                                                    <input type="submit" name="send-message" value="Send Message">
+                                                </div>
+                                            </form>';
+                        echo $contact_mark_up;
+                        echo '<input id="host-family-id" type="hidden" value="'.$_GET['host-family-id'].'">';
+
+                        if(isset($_POST['send-message'])){
+                            if(!empty($db->get_block_user($_GET['host-family-id'], get_current_user_id()))) {
+                                echo "<p class='action-response required'>Host family have blocked you, from sending a message.</p>";
+                            } else if(!empty($db->get_chats(get_current_user_id(), $_GET['host-family-id'])) && pmpro_hasMembershipLevel() === false) {
+                                $employee_membership_link = site_url('/membership-employee');
+                                echo "<p class='action-response required'>You have already sent this host family a message, have a <a href='$employee_membership_link'>premium</a> membership to send unlimited message to all host families.</p>";
+                            }  else {
+                               $data     = array(
+                                              'to-send-msg-id' => $_GET['host-family-id'],
+                                              'user-type'      => 'host-family'
+                                           );
+                               $msg_link = add_query_arg($data, site_url('/message'));
+                               echo "<p class='action-response required'>Loading...</p>";
+                               echo "<script>location.href='$msg_link';</script>";
+                            }
+                        }  
+                    }
                 ?>
             </div>
         </div>

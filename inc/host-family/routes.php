@@ -53,5 +53,6 @@
             'methods'  => 'POST',
             'callback' => 'update_host_family_photo'
         ]);
+   
     });
 ?>

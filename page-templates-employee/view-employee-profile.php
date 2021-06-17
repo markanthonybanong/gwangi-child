@@ -80,16 +80,19 @@ get_header();
                         echo '<input id="employee-id" type="hidden" value="'.$_GET['employee-id'].'">';
 
                         if(isset($_POST['send-message'])){
-                            //Check if host family already contacted this employee and is not a primeum member
-                            if(!empty($db->get_chats(get_current_user_id(), $_GET['employee-id'])) && pmpro_hasMembershipLevel() === false) {
+                            if(!empty($db->get_block_user($_GET['employee-id'], get_current_user_id()))) {
+                                echo "<p class='action-response required'>Employee have blocked you, from sending a message.</p>";
+                            } else if(!empty($db->get_chats(get_current_user_id(), $_GET['employee-id'])) && pmpro_hasMembershipLevel() === false) {
                                 $host_family_membership_link = site_url('/membership-host-family');
                                 echo "<p class='action-response required'>You have already sent this employee a message, have a <a href='$host_family_membership_link'>premium</a> membership to send unlimited message to all employees.</p>";
-                            } else if(!empty($db->get_block_user($_GET['employee-id'], get_current_user_id()))) {
-                                echo "<p class='action-response required'>Employee have blocked you, from sending a message.</p>";
-                            } else {
-                               $host_family_msg_link = add_query_arg('employee-id', $_GET['employee-id'], site_url('/message-host-family'));
+                            }  else {
+                                $data = array(
+                                    'to-send-msg-id' => $_GET['employee-id'],
+                                    'user-type'      => 'employee'
+                                 );
+                                $msg_link = add_query_arg($data, site_url('/message'));
                                echo "<p class='action-response required'>Loading...</p>";
-                               echo "<script>location.href='$host_family_msg_link';</script>";
+                               echo "<script>location.href='$msg_link';</script>";
                             }
                         }  
                     }

@@ -42,6 +42,12 @@ function child_theme_enque_scripts() {
         ));
     }elseif(is_page_template('page-templates-host-family/find-host-family.php')) {
         wp_enqueue_script('find-host-family', get_stylesheet_directory_uri(). '/dist/find-host-family.js', false, date("h:i:s"), true);
+    } elseif(is_page_template('page-templates-message/message.php')) {
+        wp_enqueue_script('message', get_stylesheet_directory_uri(). '/dist/message.js', false, date("h:i:s"), true);
+        wp_localize_script('message', 'myAjax', array( 
+            'restURL' => rest_url(),
+            'nonce'   => wp_create_nonce('wp_rest')
+        ));
     }
 }
 add_action('wp_enqueue_scripts', 'child_theme_enque_scripts');

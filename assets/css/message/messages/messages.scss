@@ -1,0 +1,98 @@
+@import "../../../utilities/sass/variables";
+.messages-container{
+    height: 400px;
+    // background: yellow;
+    overflow: scroll;
+    .msg-row{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-top: 1px solid gray;
+        display: flex;
+       
+        .column-one{
+            display: flex;
+            input{
+                margin-top: 20px;
+                margin-right: 10px;
+            }
+            .photo-container{
+                position: relative;
+                height: 55px;
+                width: 55px;
+                #user-photo{
+                    border-radius: 15px;
+                    height: 55px;
+                    width: 55px;
+                   
+                }
+                #unopened-msgs{
+                    background: $primary-color;
+                    color: white;
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    text-align: center;
+                    font-weight: bold;
+                    position: absolute;
+                    bottom: 40px;
+                    left: 40px;
+                }
+               
+            }
+        }
+        .column-two{
+            margin-left: 30px;
+            h6,
+            p{
+                color: black;
+            }
+        }
+    }
+    .msg-row:last-child{
+        // border-bottom: 1px solid gray;
+    }
+    .msg-row:hover{
+        background: $primary-color;
+        color: white;
+        cursor: pointer;
+        .column-one{
+            #unopened-msgs{
+                background: white;
+                color: black;
+            }
+        }
+        .column-two{
+            h6,
+            p{
+                color: white;
+            }
+
+        }
+            
+    }
+}
+.btn-container{
+    border-top: 3px solid $primary-color;
+    margin-top: 15px;
+    padding-top: 9px;
+    input{
+        width: 100%;
+        background: red;
+        color: white;
+    }
+    input:hover{
+        opacity: 0.7;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .btn-container{
+        display: flex;
+        input{
+            width: auto;
+        }
+        justify-content: flex-end;
+    }
+}
