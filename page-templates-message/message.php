@@ -8,8 +8,13 @@ get_header();
     global $wpdb;
     require get_theme_file_path('inc/message/message/message-utils.php');
     require get_theme_file_path('inc/message/message/message-db.php');
-    $db    = new MessageHostFamilyDb($wpdb);
-    $utils = new MessageHostFamilyUtils($db);
+    $db               = new MessageHostFamilyDb($wpdb);
+    //Success returns the membership level object. Failure returns false
+    $membership_level = pmpro_getMembershipLevelForUser(get_current_user_id());
+    $utils = new MessageHostFamilyUtils(
+             $db,
+             $membership_level
+            );
 ?>
 <div class="active-aupair-parent-container">
     <div class="active-aupair-container">
@@ -19,7 +24,7 @@ get_header();
                 <div class="first-column">
                     <?php
                         if($_GET['user-type'] === 'host-family'){
-                            $host_family = $db->get_host_family();
+                            $host_family = $db->get_host_family($_GET['to-send-msg-id']);
                             if($host_family->photo != ""){
                                 $imgSrc = get_stylesheet_directory_uri().'/users-photo/host-family/'.$host_family->photo;
                                 echo "<div class='photo-container'>
@@ -33,7 +38,7 @@ get_header();
                             }
                             echo "<h6>$host_family->firstname $host_family->lastname</h6>";
                         } else {
-                            $employee = $db->get_employee();
+                            $employee = $db->get_employee($_GET['to-send-msg-id']);
                             if($employee->photo != ""){
                                 $imgSrc = get_stylesheet_directory_uri().'/users-photo/employee/'.$employee->photo;
                                 echo "<div class='photo-container'>
@@ -60,8 +65,65 @@ get_header();
                 <?php echo $utils->display_previous_conversation();?> 
             </div>
             <div class="input-area">
-                <input type="text" id="message-field">
-                <button id='send-btn'>Send</button>
+                    <?php
+                        if( 
+                            get_user_meta(get_current_user_id(), 'user_type', true) === 'host-family' &&
+                            $membership_level === false &&
+                            $utils->have_already_sent_msg() === false
+                        ){
+                            $host_family          = $db->get_host_family(get_current_user_id());
+                            $host_family_free_msg = 'Greetings, I am '.$host_family->firstname.' '.$host_family->lastname.' '.$host_family->nationality.', from '.$host_family->country.
+                            ' I have take a look at your profile and Im wondering if you are still looking for a job?';
+                            $mark_up  = '<div class="host-family-free-container"> 
+                                            <div class="host-family-free-msg-container">
+                                                <p>As a registered Host Family, you are free to send, each and every Employee with the following message, for one time. To let them know
+                                                that your are interested, for their service.</p>
+                                                <p id="host-family-free-msg">'.$host_family_free_msg.'</p>
+                                            </div>
+                                            <div class="host-family-free-btn-container">
+                                                <button type="submit" id="send-host-family-free-msg-btn">send free message</button>
+                                            </div>
+                                        </div>';
+                            echo $mark_up;
+                        } else if(
+                            get_user_meta(get_current_user_id(), 'user_type', true) === 'employee' &&
+                            $membership_level === false &&
+                            $utils->have_already_sent_msg() === false
+                        ){
+                           $mark_up = '<div class="employee-free-container">
+                                            <div class="employee-free-msg-container">
+                                                <p>As a registered Employee, you are free to send, each and every Host Family a message, for one time. Host Family
+                                                that is not a premium member, cannot read your message but will know that you send one. However if your a premium member,
+                                                Host Family can read your message, even if the Host Family is not a premium member.</p>
+                                            </div>
+                                            <div class="send-employee-free-msg-btn-container">
+                                                <input type="text" id="message-field">
+                                                <button id="send-employee-free-msg-btn">Send free message</button>
+                                            </div>
+                                      </div>';     
+                            echo $mark_up;
+                            
+                        } else if(
+                            get_user_meta(get_current_user_id(), 'user_type', true) === 'host-family' &&
+                            $membership_level === false &&
+                            $utils->have_already_sent_msg()
+                        ){
+                            $host_family_membership_link = site_url('/membership-host-family');
+                            echo "<p class='action-response required'>You have already sent this employee a message, have a <a id='premium-member' href='$host_family_membership_link'>premium membership</a> to send unlimited message to all employees.</p>";
+                        } else if(
+                            get_user_meta(get_current_user_id(), 'user_type', true) === 'employee' &&
+                            $membership_level === false &&
+                            $utils->have_already_sent_msg()
+                        ){
+                            $employee_membership_link = site_url('/membership-employee');
+                            echo "<p class='action-response required'>You have already sent this host family a message, have a <a id='premium-member' href='$employee_membership_link'>premium membership</a> to send unlimited message to all host families.</p>";
+                        }else {
+                            echo '<input type="text" id="message-field">';
+                            echo '<button id="send-btn">Send</button>';
+                        }
+                    ?>
+            
+               
             </div>
         </div>
     </div>

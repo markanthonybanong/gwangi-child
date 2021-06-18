@@ -1,3 +1,7 @@
+#no-msgs {
+  display: none;
+}
+
 .messages-container {
   height: 400px;
   overflow: scroll;
@@ -36,12 +40,12 @@
 }
 
 .messages-container .msg-row .column-one .photo-container #unopened-msgs {
+  display: none;
   background: #245CC5;
   color: white;
   height: 25px;
   width: 25px;
   border-radius: 50%;
-  display: inline-block;
   text-align: center;
   font-weight: bold;
   position: absolute;
@@ -56,6 +60,10 @@
 .messages-container .msg-row .column-two h6,
 .messages-container .msg-row .column-two p {
   color: black;
+}
+
+.messages-container .last-msg {
+  border-bottom: 1px solid gray;
 }
 
 .messages-container .msg-row:hover {
@@ -78,6 +86,10 @@
   border-top: 3px solid #245CC5;
   margin-top: 15px;
   padding-top: 9px;
+}
+
+.btn-container #delete-msg {
+  display: none;
 }
 
 .btn-container input {

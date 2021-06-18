@@ -84,7 +84,7 @@ get_header();
                                 echo "<p class='action-response required'>Employee have blocked you, from sending a message.</p>";
                             } else if(!empty($db->get_chats(get_current_user_id(), $_GET['employee-id'])) && pmpro_hasMembershipLevel() === false) {
                                 $host_family_membership_link = site_url('/membership-host-family');
-                                echo "<p class='action-response required'>You have already sent this employee a message, have a <a href='$host_family_membership_link'>premium</a> membership to send unlimited message to all employees.</p>";
+                                echo "<p class='action-response required'>You have already sent this employee a message, have a <a id='premium-member' href='$host_family_membership_link'>premium membership</a> to send unlimited message to all employees.</p>";
                             }  else {
                                 $data = array(
                                     'to-send-msg-id' => $_GET['employee-id'],

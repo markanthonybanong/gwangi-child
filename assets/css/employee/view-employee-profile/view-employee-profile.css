@@ -100,6 +100,10 @@
   text-align: center;
 }
 
+.active-aupair-parent-container .active-aupair-container .employee-account-container .column-two .action-response #premium-member {
+  color: #245CC5;
+}
+
 .active-aupair-parent-container .row {
   width: 95%;
   display: -webkit-box;

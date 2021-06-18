@@ -69,14 +69,14 @@
     }
     function add_message_entry($request){
         global $wpdb;
-        $wp_user_id_one = $request['wpUserIdOne'];
-        $message        = $request['message'];
-      
-        $data           = array(
-                               'from_wp_user_id' => get_current_user_id(),
-                               'to_wp_user_id'   => $wp_user_id_one,
-                               'message'         => $message,
-                          );
+        $message = $request['message'];
+        $data    = array(
+                        'from_wp_user_id'   => get_current_user_id(),
+                        'to_wp_user_id'     => $request['wpUserIdOne'],
+                        'message'           => $message,
+                        'message_type'      => $request['messageType'],
+                        'sender_membership' => $request['senderMembership']
+                   );
 
         $result = $wpdb->insert('aupair_messages', $data);
         if($result){
@@ -125,6 +125,17 @@
         $wpdb->update('aupair_messages', array('opened' => 1), array('id' => $request['id']));
         die();
     }
+    function get_unopened_msgs($request){
+        global $wpdb;
+        $wp_user_id = $request['wpUserId'];
+        $result     = $wpdb->get_results("SELECT * FROM aupair_messages WHERE to_wp_user_id = '$wp_user_id' AND opened = 0");
+        if($result){
+            wp_send_json_success($result);
+        } else {
+            wp_send_json_error($wpdb->last_query);
+        }
+        die();
+    }
     add_action('rest_api_init', function(){
         register_rest_route( 'activeAupair/v1', '/getBlockUser', [
             'methods'  => 'GET',
@@ -161,6 +172,10 @@
         register_rest_route( 'activeAupair/v1', '/updateOpenedStatus', [
             'methods'  => 'POST',
             'callback' => 'update_opened_status'
+        ]);
+        register_rest_route( 'activeAupair/v1', '/getUnOpenedMsgs', [
+            'methods'  => 'GET',
+            'callback' => 'get_unopened_msgs'
         ]);
     });
 ?>

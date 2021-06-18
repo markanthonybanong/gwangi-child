@@ -1,6 +1,7 @@
 @import "./variables";
 header{
-    background: #ffffff;
+    // background: #ffffff;
+    background: pink;
     .header-container{
       display: flex;
       flex-direction: column;
@@ -92,9 +93,26 @@ header{
         transform: rotate(-135deg);
         -webkit-transform: rotate(-135deg);
       }
-      #envelope-icon{
-        font-size: 22px;
+      #envelope{
+        position: relative;
+        #envelope-icon{
+          font-size: 35px;
+        }
+        #unopened-msgs{
+          display: none;
+          background: $primary-color;
+          color: white;
+          height: 25px;
+          width: 25px;
+          border-radius: 50%;
+          text-align: center;
+          font-weight: bold;
+          position: absolute;
+          bottom: 32px;
+          left: 31px;
+        }
       }
+ 
     }
 }
 .header-banner-container{
@@ -186,6 +204,12 @@ header{
         background: #ffffff !important;
         border-radius: 10px !important;
         z-index: 10;
+      }
+      #envelope{
+        #unopened-msgs{
+          top: 2px;
+          left: 20px;
+        }
       }
     }
   }

@@ -66,6 +66,7 @@ get_header();
                 <p id="membership-end">The Premium Membership ends automatically.</p>
                 <h3 class="add-border-bottom">Premium Membership for Host Families</h3>
                 <p id="check">Contact all Employees through personal messages and exchange contact information.</p>
+                <p id="check">Read messages sent by Employee.</p>
                 <h3 class="add-border-bottom">Basic Membership</h3>
                 <p id="check">Register and use activeaupair.com for free!</p>
                 <p id="check">Send one message to ALL Employees for FREE. If you have contacted a Premium Employee, the employee will be able to read it right away. Otherwise you can wait for the employee to become Premium Member.</p>

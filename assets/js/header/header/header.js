@@ -1,5 +1,3 @@
-import { io } from "socket.io-client";
-
 export default $(function(){
       $('#nav-toggle').on('click', function() {
         $('.menu').slideToggle();

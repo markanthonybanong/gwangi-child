@@ -126,4 +126,55 @@
 .message-container .input-area #send-btn:hover {
   opacity: 0.7;
 }
+
+.message-container .input-area .host-family-free-container .host-family-free-msg-container #host-family-free-msg {
+  font-weight: bold;
+}
+
+.message-container .input-area .host-family-free-container .host-family-free-btn-container button {
+  width: 100%;
+}
+
+.message-container .input-area .employee-free-container .send-employee-free-msg-btn-container {
+  width: 100%;
+}
+
+.message-container .input-area .employee-free-container .send-employee-free-msg-btn-container #send-employee-free-msg-btn {
+  margin-top: 15px;
+  width: 100%;
+  background-color: #245CC5;
+  color: white;
+}
+
+.message-container .input-area .employee-free-container .send-employee-free-msg-btn-container #send-employee-free-msg-btn:hover {
+  opacity: 0.7;
+}
+
+#premium-member {
+  color: #245CC5;
+}
+
+@media (min-width: 992px) {
+  .input-area .host-family-free-btn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .input-area .host-family-free-btn-container button {
+    width: auto !important;
+  }
+  .input-area .employee-free-container .send-employee-free-msg-btn-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .input-area .employee-free-container .send-employee-free-msg-btn-container #send-employee-free-msg-btn {
+    width: auto !important;
+    margin-top: 0px !important;
+    margin-left: 15px;
+  }
+}
 /*# sourceMappingURL=message.css.map */

@@ -1,4 +1,9 @@
-<?php 
+<?php
+function get_login_user_unopened_msgs(){
+    global $wpdb;
+    $current_user_id = get_current_user_id();
+    return $wpdb->get_results("SELECT * FROM aupair_messages WHERE to_wp_user_id = '$current_user_id' AND opened = 0");
+}
 /**
  * Active Aupair background hooks, run when certain action is perform.
  */
@@ -46,11 +51,11 @@ add_filter('wp_authenticate_user', 'custom_authenticate_user',11,1);
  */
 function display_user_menu($items, $args){
     $employee_url_data    = add_query_arg('employee-id', get_current_user_id(), site_url('/view-employee-profile'));
-    $employee             = '<li id="envelope">
-                                <a href="'.site_url('/message-employee').'">
-                                    <span id="envelope-icon">
+    $employee             = '<li>
+                                <a href="'.site_url('/messages').'">
+                                    <i id="envelope-icon">
                                         <i class="far fa-envelope"></i>
-                                    </span>
+                                    </i>
                                 </a>
                             </li>
                             <li><a href="'.site_url('/membership-employee').'">Membership</a></li>
@@ -59,17 +64,17 @@ function display_user_menu($items, $args){
                                 <ul class="sub-menu">
                                     <li><a href="'.site_url('/update-employee-profile').'">Update Profile</a></li>
                                     <li><a href="'.$employee_url_data.'">View Profile</a></li>
-                                    <li><a href="'.site_url('/messages').'">Messages</a></li>
                                     <li><a href="'.site_url('/wp-login.php?action=logout"').'">Log Out?</a></li>
                                 </ul>
                             </li>';
     $host_family_url_data = add_query_arg('host-family-id', get_current_user_id(), site_url('/view-host-family-profile'));
     $host_family          = '<li id="envelope">
-                                <a href="'.site_url('/message-employee').'">
-                                    <span id="envelope-icon">
+                                <a href="'.site_url('/messages').'">
+                                    <i id="envelope-icon">
                                         <i class="far fa-envelope"></i>
-                                    </span>
+                                    </i>
                                 </a>
+                                <i id="unopened-msgs">'.count(get_login_user_unopened_msgs()).'</i>
                             </li>
                             <li><a href="'.site_url('/membership-host-family').'">Membership</a></li>
                             <li>
@@ -77,7 +82,6 @@ function display_user_menu($items, $args){
                                 <ul class="sub-menu">
                                     <li><a href="'.site_url('/update-host-family-profile').'">Update Profile</a></li>
                                     <li><a href="'.$host_family_url_data.'">View Profile</a></li>
-                                    <li><a href="'.site_url('/messages').'">Messages</a></li>
                                     <li><a href="'.site_url('/wp-login.php?action=logout"').'">Log Out?</a></li>
                                 </ul>
                             </li>';

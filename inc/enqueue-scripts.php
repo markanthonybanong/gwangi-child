@@ -1,7 +1,11 @@
 <?php 
 function child_theme_enque_scripts() {
     //for development only change date to false
-    wp_enqueue_script('header', get_stylesheet_directory_uri(). '/assets/utilities/js/header.js', array('jquery'), date("h:i:s"), true);
+    wp_enqueue_script('header', get_stylesheet_directory_uri(). '/dist/header.js', array('jquery'), date("h:i:s"), true);
+    wp_localize_script( 'header', 'myAjax', array( 
+        'restURL' => rest_url(),
+        'nonce'   => wp_create_nonce('wp_rest')
+    ));
     if(is_page_template('page-templates-employee/register-employee.php')) {
         wp_enqueue_script('register-employee', get_stylesheet_directory_uri(). '/dist/register-employee.js', array('jquery'), date("h:i:s"), true);
         wp_localize_script( 'register-employee', 'myAjax', array( 
@@ -48,6 +52,9 @@ function child_theme_enque_scripts() {
             'restURL' => rest_url(),
             'nonce'   => wp_create_nonce('wp_rest')
         ));
+    } elseif(is_page_template('page-templates-message/messages.php')) {
+        wp_enqueue_script('messages', get_stylesheet_directory_uri(). '/dist/messages.js', false, date("h:i:s"), true);
+        
     }
 }
 add_action('wp_enqueue_scripts', 'child_theme_enque_scripts');

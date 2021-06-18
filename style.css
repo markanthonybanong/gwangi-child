@@ -1644,7 +1644,7 @@ This stylesheet follow the basic principles of CSS Guidilines http://cssguidelin
 }
 
 header {
-  background: #ffffff;
+  background: pink;
 }
 
 header .header-container {
@@ -1765,8 +1765,26 @@ header .menu .up {
   -webkit-transform: rotate(-135deg);
 }
 
-header .menu #envelope-icon {
-  font-size: 22px;
+header .menu #envelope {
+  position: relative;
+}
+
+header .menu #envelope #envelope-icon {
+  font-size: 35px;
+}
+
+header .menu #envelope #unopened-msgs {
+  display: none;
+  background: #245CC5;
+  color: white;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  bottom: 32px;
+  left: 31px;
 }
 
 .header-banner-container {
@@ -1892,6 +1910,10 @@ header .menu #envelope-icon {
     background: #ffffff !important;
     border-radius: 10px !important;
     z-index: 10;
+  }
+  .header-container .menu #envelope #unopened-msgs {
+    top: 2px;
+    left: 20px;
   }
   .header-banner-container {
     height: 300px;

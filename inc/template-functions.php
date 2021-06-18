@@ -61,6 +61,7 @@ if ( ! function_exists( 'gwangi_header_logged_in' ) ) :
 	function gwangi_header_logged_in() {
 		?>
 		<header>
+			<input type="hidden" id="current-user-id" value="<?php echo get_current_user_id();?>">
 			<div class="header-container">
 				<div class="logo-container">
 					<?php
